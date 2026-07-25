@@ -1,0 +1,20 @@
+# robots.txt for BrightSmile Dental Clinic
+# Website: https://dentalinkathmandu.com
+# Last updated: 2026-07-25
+
+# -----------------------------------------------
+# Allow all search engine crawlers
+# -----------------------------------------------
+User-agent: *
+Allow: /
+
+# -----------------------------------------------
+# Disallow internal/non-public directories
+# -----------------------------------------------
+Disallow: /assets/css/
+Disallow: /assets/js/
+
+# -----------------------------------------------
+# Sitemap location
+# -----------------------------------------------
+Sitemap: https://dentalinkathmandu.com/sitemap.xml

@@ -5,15 +5,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="_Ikr94h6MWyrnweniNbtq91-Hxwscgbk1RAyVIx983A" />
   <meta name="robots" content="index, follow">
-  <title>Teeth Whitening Treatment | Dental in Kathmandu Kathmandu</title>
-  <meta name="description" content="Brighten your smile with professional teeth whitening treatment at Dental in Kathmandu in Kathmandu. Safe, fast, and highly effective clinical sessions.">
+  
+  <!-- Local SEO Title & Meta Description -->
+  <title>Teeth Whitening in Kathmandu | Putalisadak | BrightSmile Dental</title>
+  <meta name="description" content="Get up to 8 shades whiter teeth in 60 mins at BrightSmile Dental Clinic, Putalisadak, Kathmandu. Safe, pain-free gel & blue LED whitening (NPR 10,000). Book today!">
   <link rel="canonical" href="https://dentalinkathmandu.com/treatments/teeth-whitening/">
+  
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
   
-  <!-- CSS Stylesheet -->
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="../../assets/css/styles.css">
+  <link rel="stylesheet" href="../../assets/css/treatment-landing.css">
+
+  <!-- Schema.org JSON-LD Structured Data for Local SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Dentist",
+        "@id": "https://dentalinkathmandu.com/#clinic",
+        "name": "BrightSmile Dental Clinic",
+        "url": "https://dentalinkathmandu.com",
+        "logo": "https://dentalinkathmandu.com/assets/images/favicon-32x32.png",
+        "telephone": "+977-9800000000",
+        "email": "info@brightsmiledental.com",
+        "priceRange": "NPR 10000",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Putalisadak, Opposite Kumari Bank",
+          "addressLocality": "Kathmandu",
+          "addressRegion": "Bagmati",
+          "postalCode": "44600",
+          "addressCountry": "NP"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 27.7052,
+          "longitude": 85.3240
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "19:00"
+          }
+        ]
+      },
+      {
+        "@type": "MedicalProcedure",
+        "name": "Clinical Teeth Whitening Treatment",
+        "procedureType": "Cosmetic Dental Procedure",
+        "bodyLocation": "Teeth",
+        "description": "In-office blue LED light activated teeth whitening treatment to lighten tooth discoloration by up to 8 shades.",
+        "howPerformed": "Medical-grade hydrogen peroxide bleaching gel applied to enamel and activated by blue light in 3 cycles of 15 minutes.",
+        "provider": {
+          "@id": "https://dentalinkathmandu.com/#clinic"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dentalinkathmandu.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Treatments",
+            "item": "https://dentalinkathmandu.com/treatments/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Teeth Whitening",
+            "item": "https://dentalinkathmandu.com/treatments/teeth-whitening/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does teeth whitening cost in Kathmandu?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "At BrightSmile Dental Clinic in Putalisadak, Kathmandu, our complete clinical blue LED teeth whitening session costs NPR 10,000, including pre-assessment and fluoride post-care."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is BrightSmile Dental Clinic located?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We are centrally located in Putalisadak (opposite Kumari Bank), Kathmandu, easily accessible from Bagbazar, New Road, Durbar Marg, and Kamaladi."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is clinical whitening safe for tooth enamel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our clinical teeth whitening treatment is supervised by qualified cosmetic dentists using protective gum gels to ensure complete enamel and gum safety."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long do teeth whitening results last?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Results typically last between 1 to 2 years, depending on oral hygiene and dietary habits such as tea or coffee consumption."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -25,7 +141,7 @@
         <span>Dental in Kathmandu</span>
       </a>
       <button class="mobile-nav-toggle" aria-label="Toggle Navigation" id="mobileNavBtn">☰</button>
-            <ul class="nav-menu" id="navMenu">
+      <ul class="nav-menu" id="navMenu">
         <li><a href="/" class="nav-link">Home</a></li>
         <li class="nav-dropdown">
           <a href="/about/" class="nav-link dropdown-toggle" id="aboutDropdownToggle">About Us <span class="arrow">▼</span></a>
@@ -40,140 +156,360 @@
         <li><a href="/contact/" class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="/book/" class="btn btn-primary" id="headerCtaBtn">Book Appointment</a>
+        <a href="#hero-booking-card" class="btn btn-primary" id="headerCtaBtn" data-scroll-to="hero-booking-card">Book Appointment</a>
       </div>
     </div>
   </header>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="container">
-      <h1>Teeth Whitening Treatment</h1>
-      <div class="breadcrumbs">
-        <a href="/">Home</a> <span>/</span> <a href="/treatments/">Treatments</a> <span>/</span> <span>Teeth Whitening</span>
+  <!-- 1. LANDING HERO SECTION WITH LOCAL GEO-TAG & LEAD CAPTURE FORM -->
+  <section class="landing-hero">
+    <div class="container landing-hero-grid">
+      <div class="landing-hero-content">
+        <div class="geo-badge">
+          <span>📍 Putalisadak, Kathmandu, Nepal</span>
+        </div>
+        <h1>Professional Teeth Whitening in <span class="highlight-text">Kathmandu</span></h1>
+        <p class="landing-hero-subtitle">Brighten your smile up to 8 shades whiter in just 60 minutes with safe, painless blue LED whitening gel at BrightSmile Dental Clinic.</p>
+        
+        <ul class="hero-highlights-list">
+          <li class="hero-highlight-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Single 60-Minute Session</span>
+          </li>
+          <li class="hero-highlight-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>100% Enamel-Safe Gel</span>
+          </li>
+          <li class="hero-highlight-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Results Last Up To 2 Years</span>
+          </li>
+          <li class="hero-highlight-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Supervised by MDS Specialists</span>
+          </li>
+        </ul>
+
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <span class="trust-number">15+ Yrs</span>
+            <span class="trust-label">Kathmandu Clinic</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">10,000+</span>
+            <span class="trust-label">Happy Patients</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">4.9 ★★★★★</span>
+            <span class="trust-label">Google Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Lead Capture Card -->
+      <div class="hero-booking-card" id="hero-booking-card">
+        <h3>Book Whitening Slot</h3>
+        <p>Get instant appointment confirmation at our Putalisadak clinic.</p>
+
+        <form class="booking-form" id="landingLeadForm">
+          <div class="form-group">
+            <label for="leadName">Full Name *</label>
+            <input type="text" id="leadName" class="form-control" placeholder="e.g. Ramesh Shrestha" required>
+          </div>
+          <div class="form-group">
+            <label for="leadPhone">Phone Number *</label>
+            <input type="tel" id="leadPhone" class="form-control" placeholder="e.g. +977 98XXXXXXX" required>
+          </div>
+          <div class="form-group">
+            <label for="leadDate">Preferred Appointment Date</label>
+            <input type="date" id="leadDate" class="form-control">
+          </div>
+          <button type="submit" class="booking-form-submit">Request Slot Now</button>
+          <div class="form-privacy-note">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Your information is confidential & secure.
+          </div>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- Treatment Detailed Section -->
-  <section class="section">
-    <div class="container treatment-section">
-      <div class="treatment-main-content">
-        <h2>What Is Teeth Whitening?</h2>
-        <p>Teeth whitening is a cosmetic procedure that lightens stains and discoloration from your teeth enamel. At Dental in Kathmandu, we use medical-grade hydrogen peroxide bleaching gels activated by a specialized blue light. This clinical method safely breaks down deep discolored molecules, brightening your smile by up to 8 shades in a single visit.</p>
-        
-        <h3>Who Needs Teeth Whitening?</h3>
-        <p>This treatment is ideal for individuals looking to enhance their smile aesthetics. Common causes of tooth staining include:</p>
-        <ul class="treatment-benefits-list" style="margin-left: 1.5rem; list-style: disc;">
-          <li>Stains from consuming tea, coffee, red wine, or sodas.</li>
-          <li>Discoloration caused by tobacco use or smoking.</li>
-          <li>Natural yellowing of teeth due to aging.</li>
-          <li>Stains from fluoride exposure during tooth development.</li>
-        </ul>
+  <!-- 2. BEFORE & AFTER TRANSFORMATION SHOWCASE -->
+  <section class="before-after-section">
+    <div class="container">
+      <div class="landing-section-header">
+        <span class="section-tag">Proven Results</span>
+        <h2>Real Patient Transformations</h2>
+        <p>Drag the slider below to see how clinical LED whitening removes stubborn tea, coffee, and tobacco stains.</p>
+      </div>
 
-        <h3>Benefits of Professional Whitening</h3>
-        <ul class="treatment-benefits-list">
-          <li class="treatment-benefits-item"><span>✓</span> Instant results: Brightens your smile in a single 60-minute session.</li>
-          <li class="treatment-benefits-item"><span>✓</span> Safe procedures: Supervised by dental professionals to protect your gums.</li>
-          <li class="treatment-benefits-item"><span>✓</span> Customized shade: We match the whitening level to your visual preference.</li>
-          <li class="treatment-benefits-item"><span>✓</span> Long-lasting: Results can last up to 1-2 years with proper home care.</li>
-        </ul>
-
-        <h3>Step-by-Step Whitening Process</h3>
-        <ul class="treatment-procedure-steps">
-          <li class="procedure-step">
-            <div class="procedure-step-num">1</div>
-            <div class="procedure-step-content">
-              <h4>Preparation & Cleaning</h4>
-              <p>We check your teeth and gums, then perform a quick clean to remove surface plaque and ensure even bleaching gel application.</p>
-            </div>
-          </li>
-          <li class="procedure-step">
-            <div class="procedure-step-num">2</div>
-            <div class="procedure-step-content">
-              <h4>Gum Protection</h4>
-              <p>A protective barrier gel is applied to your gums to safeguard them from the medical-grade bleaching agent.</p>
-            </div>
-          </li>
-          <li class="procedure-step">
-            <div class="procedure-step-num">3</div>
-            <div class="procedure-step-content">
-              <h4>Gel & Light Activation</h4>
-              <p>The whitening gel is applied to your teeth and activated using a specialized LED light. This is done in 2-3 cycles of 15 minutes each.</p>
-            </div>
-          </li>
-          <li class="procedure-step">
-            <div class="procedure-step-num">4</div>
-            <div class="procedure-step-content">
-              <h4>Rinse & Fluoride Care</h4>
-              <p>The gel and barrier are removed, and we apply a desensitizing fluoride treatment to strengthen your enamel.</p>
-            </div>
-          </li>
-        </ul>
-
-        <h3>Recovery & Aftercare</h3>
-        <p>To maintain your bright smile, we recommend following the "White Diet" for the first 48 hours. Avoid dark foods and drinks (coffee, tea, soy sauce, curries) and smoking. Temporary tooth sensitivity is normal and resolves within 24 hours.</p>
-
-        <h3>Starting Cost</h3>
-        <p>Our professional in-office teeth whitening treatment starts at **NPR 10,000**.</p>
-
-        <!-- FAQs -->
-        <h3 style="margin-top: 3rem;">Frequently Asked Questions</h3>
-        <div class="faq-accordion" style="margin-top: 1rem;">
-          <div class="faq-item">
-            <button class="faq-trigger">Is clinical whitening safe for my teeth?</button>
-            <div class="faq-answer">
-              <p>Yes, professional whitening is completely safe when performed by a qualified dentist. The gels used are designed not to soften or damage your enamel.</p>
-            </div>
+      <div class="before-after-card">
+        <div class="ba-slider-container" id="baSliderContainer">
+          <div class="ba-img ba-img-after">
+            <img src="/assets/images/treatments/teeth-whitening-after.jpg" alt="Teeth whitening after treatment result" onerror="this.src='https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80'">
+            <span class="ba-label ba-label-after">After</span>
           </div>
-          <div class="faq-item">
-            <button class="faq-trigger">Will whitening work on fillings, crowns, or veneers?</button>
-            <div class="faq-answer">
-              <p>No, whitening agents only work on natural tooth structure. They will not change the color of composite fillings, crowns, or porcelain veneers.</p>
-            </div>
+          <div class="ba-img ba-img-before" id="baImgBefore">
+            <img src="/assets/images/treatments/teeth-whitening-before.jpg" alt="Teeth whitening before treatment" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80'">
+            <span class="ba-label ba-label-before">Before</span>
           </div>
-          <div class="faq-item">
-            <button class="faq-trigger">How long do teeth whitening results last?</button>
-            <div class="faq-answer">
-              <p>Results typically last between 1 to 2 years, depending on your dietary habits, oral hygiene, and tobacco use.</p>
-            </div>
+          <div class="ba-handle" id="baHandle">
+            <div class="ba-handle-circle">↔</div>
           </div>
-          <div class="faq-item">
-            <button class="faq-trigger">Does teeth whitening cause permanent sensitivity?</button>
-            <div class="faq-answer">
-              <p>No, any sensitivity experienced during or after treatment is temporary and usually resolves within 24 to 48 hours.</p>
+        </div>
+
+        <div class="ba-info">
+          <h3>Why Choose Clinical Whitening Over Store Kits?</h3>
+          <p>Over-the-counter whitening strips in local pharmacies often contain uneven concentrations that risk sensitivity or patchy results. At BrightSmile Dental Clinic, our clinical blue LED sessions use customized gum protection barriers and dentist-grade gel for uniform, fast brightening.</p>
+          
+          <div class="ba-metrics">
+            <div class="ba-metric-box">
+              <div class="ba-metric-val">8 Shades</div>
+              <div class="ba-metric-lbl">Whiter Smile Average</div>
             </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger">Can pregnant women undergo teeth whitening?</button>
-            <div class="faq-answer">
-              <p>As a precaution, we do not recommend cosmetic teeth whitening treatments for pregnant or nursing mothers.</p>
+            <div class="ba-metric-box">
+              <div class="ba-metric-val">60 Mins</div>
+              <div class="ba-metric-lbl">Total Treatment Time</div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Sidebar -->
-      <aside class="treatment-sidebar">
-        <div class="treatment-card-box">
-          <h3>Other Treatments</h3>
-          <ul class="treatment-menu">
-            <li class="treatment-menu-item"><a href="/treatments/dental-checkup/">Dental Checkup</a></li>
-            <li class="treatment-menu-item"><a href="/treatments/teeth-cleaning/">Teeth Cleaning</a></li>
-            <li class="treatment-menu-item"><a href="/treatments/dental-fillings/">Dental Fillings</a></li>
-            <li class="treatment-menu-item active"><a href="/treatments/teeth-whitening/">Teeth Whitening</a></li>
-            <li class="treatment-menu-item"><a href="/treatments/dental-veneers/">Dental Veneers</a></li>
-            <li class="treatment-menu-item"><a href="/treatments/smile-makeover/">Smile Makeover</a></li>
-            <li class="treatment-menu-item"><a href="/treatments/dental-crowns/">Dental Crowns</a></li>
-            <li class="treatment-menu-item"><a href="/treatments/dental-bridges/">Dental Bridges</a></li>
-          </ul>
+  <!-- 3. STEP-BY-STEP TREATMENT PROCESS -->
+  <section class="section">
+    <div class="container">
+      <div class="landing-section-header">
+        <span class="section-tag">Simple & Safe</span>
+        <h2>Our 4-Step Clinical Whitening Process</h2>
+        <p>What to expect during your 60-minute visit at our Putalisadak dental clinic.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card">
+          <span class="process-number">01</span>
+          <div class="process-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3>Checkup & Polish</h3>
+          <p>We evaluate your enamel health and perform a light polish to remove surface plaque for even gel absorption.</p>
         </div>
-        <div class="form-card" style="padding: 1.5rem; text-align: center;">
-          <h4>Want a Brighter Smile?</h4>
-          <p style="font-size:0.85rem; color:var(--text-light); margin-bottom:1rem; margin-top:0.5rem;">Book online or call for quick slots.</p>
-          <a href="/book/" class="btn btn-primary" style="width: 100%;">Request Booking</a>
+
+        <div class="process-card">
+          <span class="process-number">02</span>
+          <div class="process-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <h3>Gum Protection</h3>
+          <p>A specialized medical liquid dam gel is applied to protect your gums and soft tissues completely from irritation.</p>
         </div>
-      </aside>
+
+        <div class="process-card">
+          <span class="process-number">03</span>
+          <div class="process-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+          </div>
+          <h3>LED Activation</h3>
+          <p>The whitening gel is activated with our blue LED light accelerator in 3 cycles of 15 minutes to break down deep stains.</p>
+        </div>
+
+        <div class="process-card">
+          <span class="process-number">04</span>
+          <div class="process-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <h3>Fluoride Post-Care</h3>
+          <p>We apply a desensitizing fluoride coating to lock in your bright shade while keeping your enamel strong and pain-free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. TRANSPARENT NPR PRICING SECTION -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="landing-section-header">
+        <span class="section-tag">Clear Pricing</span>
+        <h2>Affordable Teeth Whitening Package in Kathmandu</h2>
+        <p>No hidden fees. Full transparency for our valued local patients.</p>
+      </div>
+
+      <div class="pricing-card-wrapper">
+        <div class="pricing-card-main">
+          <span class="pricing-badge">All-Inclusive Session</span>
+          <h3>Clinical LED Whitening</h3>
+          <p style="color: var(--text-light); font-size: 0.9rem;">Complete in-office teeth whitening session supervised by our senior cosmetic dentist.</p>
+
+          <div class="pricing-price-box">
+            <span class="pricing-amount">NPR 10,000</span>
+            <span class="pricing-currency">/ session</span>
+          </div>
+
+          <p style="font-size: 0.825rem; color: var(--text-muted);">* Flexible payment options available at Putalisadak clinic.</p>
+        </div>
+
+        <div class="pricing-card-sidebar">
+          <div>
+            <h4 class="pricing-sidebar-title">Package Includes:</h4>
+            <ul class="pricing-inclusions">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Full dental enamel & gum assessment</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Complete 60-min LED whitening treatment</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Medical liquid dam protective barrier</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Free desensitizing fluoride coating</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dietary aftercare & maintenance guide</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#hero-booking-card" class="pricing-cta-btn" data-scroll-to="hero-booking-card">Book Your Package Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. DOCTOR & SPECIALIST SPOTLIGHT -->
+  <section class="section">
+    <div class="container">
+      <div class="landing-section-header">
+        <span class="section-tag">Expert Care</span>
+        <h2>Meet Our Lead Cosmetic Dentist</h2>
+        <p>Your smile is in the hands of experienced, NMC-registered dental surgeons.</p>
+      </div>
+
+      <div class="doctor-spotlight-card">
+        <div class="doctor-avatar-box">
+          <img src="/assets/images/doctors/doctor-1.jpg" alt="Dr. Anish Shrestha - Dentist in Kathmandu" onerror="this.src='https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80'">
+        </div>
+
+        <div class="doctor-spotlight-info">
+          <h3>Dr. Anish Shrestha</h3>
+          <span class="doctor-title-tag">BDS, MDS (Cosmetic Dentistry) — Senior Dental Surgeon</span>
+
+          <div class="doctor-meta-chips">
+            <span class="meta-chip">NMC Reg. #12450</span>
+            <span class="meta-chip">12+ Years Experience</span>
+            <span class="meta-chip">Kathmandu University Alumni</span>
+          </div>
+
+          <p style="font-size: 0.95rem; color: var(--text-medium); line-height: 1.6;">
+            Dr. Shrestha specializes in non-invasive cosmetic dental procedures, smile makeovers, and clinical teeth whitening. Having treated over 5,000 patients across Kathmandu, Patan, and Bhaktapur, he ensures every whitening procedure is tailored for maximum brightness and zero discomfort.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. LOCAL SEO FAQs SECTION -->
+  <section class="section" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="landing-section-header">
+        <span class="section-tag">Got Questions?</span>
+        <h2>Frequently Asked Questions in Kathmandu</h2>
+        <p>Everything you need to know about teeth whitening at BrightSmile Dental Clinic.</p>
+      </div>
+
+      <div class="faq-accordion" style="max-width: 800px; margin: 0 auto;">
+        <div class="faq-item">
+          <button class="faq-trigger">How much does teeth whitening cost in Kathmandu?</button>
+          <div class="faq-answer">
+            <p>Our complete in-office blue LED teeth whitening session at BrightSmile Dental Clinic in Putalisadak costs <strong>NPR 10,000</strong>. This all-inclusive package covers pre-whitening oral assessment, gum barrier protection, LED light session, and desensitizing fluoride coating.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">Where is your clinic located and is parking available?</button>
+          <div class="faq-answer">
+            <p>We are centrally located at <strong>Putalisadak (opposite Kumari Bank), Kathmandu</strong>. We are easily reachable within 5–10 minutes from Bagbazar, New Road, Durbar Marg, and Kamaladi. Dedicated two-wheeler and four-wheeler parking spaces are available for our patients.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">Is teeth whitening safe for enamel?</button>
+          <div class="faq-answer">
+            <p>Yes! Professional in-office whitening is completely safe when performed under dental supervision. We use pH-balanced bleaching gels and protective liquid dams to shield your gums and enamel throughout the session.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">How long do the whitening results last?</button>
+          <div class="faq-answer">
+            <p>Results typically last between 1 to 2 years. To maintain your bright smile longer, we recommend brushing twice daily, reducing consumption of heavy staining drinks (like strong black tea or red wine), and coming in for regular 6-month cleanings.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">Will whitening cause teeth sensitivity?</button>
+          <div class="faq-answer">
+            <p>Some patients experience minor, temporary sensitivity for 12–24 hours post-treatment. We apply a specialized fluoride desensitizing gel immediately after your whitening session to minimize any sensation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. LOCAL MAP & CONTACT SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="landing-section-header">
+        <span class="section-tag">Visit Our Clinic</span>
+        <h2>BrightSmile Dental Clinic in Putalisadak</h2>
+        <p>Centrally located in Kathmandu with state-of-the-art dental care equipment.</p>
+      </div>
+
+      <div class="local-contact-grid">
+        <div class="location-info-card">
+          <h3 style="margin-bottom: 1.5rem;">Clinic Details</h3>
+
+          <div class="nap-item">
+            <div class="nap-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="nap-content">
+              <h4>Address</h4>
+              <p>Putalisadak (Opposite Kumari Bank)<br>Kathmandu 44600, Nepal</p>
+            </div>
+          </div>
+
+          <div class="nap-item">
+            <div class="nap-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div class="nap-content">
+              <h4>Phone / WhatsApp</h4>
+              <p><a href="tel:+9779800000000" style="color: var(--primary-color); font-weight: 600;">+977-9800000000</a></p>
+            </div>
+          </div>
+
+          <div class="nap-item">
+            <div class="nap-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div class="nap-content">
+              <h4>Opening Hours</h4>
+              <p>Sunday – Friday: 9:00 AM – 7:00 PM<br><span style="color: var(--danger); font-size: 0.85rem;">Saturday: Closed (Emergency Call Only)</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-embed-box">
+          <iframe title="BrightSmile Dental Clinic Location Map Kathmandu" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.458742874136!2d85.32181131506195!3d27.70523498279149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a000000001%3A0x0!2sPutalisadak%2C%20Kathmandu!5e0!3m2!1sen!2snp!4v1620000000000!5m2!1sen!2snp" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -185,7 +521,7 @@
           <img src="/assets/images/favicon-32x32.png" alt="BrightSmile Dental Clinic Logo" class="logo-icon" width="40" height="40">
           <span>Dental in Kathmandu</span>
         </a>
-        <p>Your trusted partner for exceptional dental care in Kathmandu. Creating beautiful, healthy smiles since 2016.</p>
+        <p>Your trusted partner for exceptional dental care in Kathmandu. Creating beautiful, healthy smiles since 2008.</p>
         <div class="social-links">
           <a href="https://facebook.com" class="social-btn" aria-label="Facebook">F</a>
           <a href="https://instagram.com" class="social-btn" aria-label="Instagram">I</a>
@@ -239,7 +575,7 @@
           </li>
         </ul>
         <div style="margin-top: 1.5rem;">
-          <a href="/book/" class="btn btn-primary" id="footerCtaBtn" style="width: 100%; font-size: 0.9rem; padding: 0.75rem 1rem;">Book Appointment</a>
+          <a href="#hero-booking-card" class="btn btn-primary" id="footerCtaBtn" style="width: 100%; font-size: 0.9rem; padding: 0.75rem 1rem;" data-scroll-to="hero-booking-card">Book Appointment</a>
         </div>
       </div>
     </div>
@@ -252,7 +588,21 @@
     </div>
   </footer>
 
-  <!-- JavaScript File -->
+  <!-- STICKY MOBILE ACTION BAR -->
+  <div class="mobile-sticky-bar">
+    <div class="mobile-sticky-inner">
+      <a href="tel:+9779800000000" class="mobile-btn mobile-btn-call">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        Call Now
+      </a>
+      <a href="#hero-booking-card" class="mobile-btn mobile-btn-book" data-scroll-to="hero-booking-card">
+        Book Slot
+      </a>
+    </div>
+  </div>
+
+  <!-- JavaScript Files -->
   <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/treatment-landing.js"></script>
 </body>
 </html>

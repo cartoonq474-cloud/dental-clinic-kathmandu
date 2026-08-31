@@ -1,20 +1,69 @@
-# robots.txt for BrightSmile Dental Clinic
+# ==============================================================================
+# robots.txt for BrightSmile Dental Clinic (Dental in Kathmandu)
 # Website: https://dentalinkathmandu.com
-# Last updated: 2026-07-25
+# Location: Putalisadak, Opposite Kumari Bank, Kathmandu, Nepal
+# Last Updated: 2026-08-31
+# ==============================================================================
 
-# -----------------------------------------------
-# Allow all search engine crawlers
-# -----------------------------------------------
+# ------------------------------------------------------------------------------
+# Default Rules for All Web Crawlers
+# ------------------------------------------------------------------------------
 User-agent: *
 Allow: /
 
-# -----------------------------------------------
-# Disallow internal/non-public directories
-# -----------------------------------------------
-Disallow: /assets/css/
-Disallow: /assets/js/
+# Ensure search engines can access and render CSS, JavaScript, and Media
+# (Critical for Google Mobile-Friendly test & Core Web Vitals rendering)
+Allow: /assets/
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
 
-# -----------------------------------------------
-# Sitemap location
-# -----------------------------------------------
+# ------------------------------------------------------------------------------
+# Googlebot Specific Rules
+# ------------------------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+Allow: /assets/
+
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /assets/
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+# ------------------------------------------------------------------------------
+# Bingbot Specific Rules
+# ------------------------------------------------------------------------------
+User-agent: Bingbot
+Allow: /
+Allow: /assets/
+
+# ------------------------------------------------------------------------------
+# Other Search Engine Crawlers
+# ------------------------------------------------------------------------------
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# ------------------------------------------------------------------------------
+# Crawl Delay (Polite crawling for high-volume bots)
+# ------------------------------------------------------------------------------
+User-agent: *
+Crawl-delay: 1
+
+# ------------------------------------------------------------------------------
+# XML Sitemap Location
+# ------------------------------------------------------------------------------
 Sitemap: https://dentalinkathmandu.com/sitemap.xml

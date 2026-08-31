@@ -1,0 +1,19 @@
+{
+  "name": "dental-clinic-kathmandu",
+  "version": "1.0.0",
+  "description": "BrightSmile Dental Clinic Kathmandu Website",
+  "scripts": {
+    "dev": "npx -y live-server public_html --port=3000 --watch=public_html",
+    "start": "npx -y live-server public_html --port=3000 --watch=public_html",
+    "serve": "npx -y serve public_html -l 3000",
+    "build": "echo \"Static site ready in public_html/\""
+  },
+  "keywords": [
+    "dental",
+    "clinic",
+    "kathmandu",
+    "brightsmile"
+  ],
+  "author": "BrightSmile Dental Clinic",
+  "license": "ISC"
+}

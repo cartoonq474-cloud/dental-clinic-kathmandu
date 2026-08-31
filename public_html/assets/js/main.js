@@ -45,35 +45,89 @@ function initMobileNav() {
 }
 
 /**
- * FAQ Accordion Panels
+ * FAQ Accordion Panels with Live Category Filtering & Search
  */
 function initFaqs() {
   const faqTriggers = document.querySelectorAll('.faq-trigger');
+  const catButtons = document.querySelectorAll('.faq-cat-btn');
+  const searchInput = document.getElementById('faqSearchInput');
+  const faqItems = document.querySelectorAll('.faq-item');
+  const emptyState = document.getElementById('faqEmptyState');
   
+  // Accordion Toggle
   faqTriggers.forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const parent = trigger.parentElement;
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parent = trigger.closest('.faq-item');
+      if (!parent) return;
       const isCurrentlyActive = parent.classList.contains('active');
       
-      // Close all other FAQs first
-      const allItems = document.querySelectorAll('.faq-item');
-      allItems.forEach(item => {
+      // Close all other FAQs
+      faqItems.forEach(item => {
         item.classList.remove('active');
         const answer = item.querySelector('.faq-answer');
         if (answer) answer.style.maxHeight = null;
       });
       
-      // Toggle current FAQ
+      // Toggle clicked FAQ
       if (!isCurrentlyActive) {
         parent.classList.add('active');
         const answer = parent.querySelector('.faq-answer');
         if (answer) {
-          // Add 24px (padding top + bottom = 0.75rem * 2 at 16px) to ensure padding is not clipped
-          answer.style.maxHeight = (answer.scrollHeight + 24) + 'px';
+          answer.style.maxHeight = (answer.scrollHeight + 32) + 'px';
         }
       }
     });
   });
+
+  // Filter Logic
+  let activeCategory = 'all';
+  let searchQuery = '';
+
+  function filterFaqItems() {
+    let visibleCount = 0;
+    const query = searchQuery.trim().toLowerCase();
+
+    faqItems.forEach(item => {
+      const category = item.getAttribute('data-faq-category') || 'general';
+      const text = item.textContent.toLowerCase();
+
+      const matchesCategory = (activeCategory === 'all') || (category === activeCategory);
+      const matchesSearch = (query === '') || text.includes(query);
+
+      if (matchesCategory && matchesSearch) {
+        item.style.display = '';
+        visibleCount++;
+      } else {
+        item.style.display = 'none';
+        item.classList.remove('active');
+        const ans = item.querySelector('.faq-answer');
+        if (ans) ans.style.maxHeight = null;
+      }
+    });
+
+    if (emptyState) {
+      emptyState.style.display = (visibleCount === 0) ? 'block' : 'none';
+    }
+  }
+
+  // Category Tab Click
+  catButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = btn.getAttribute('data-filter') || 'all';
+      filterFaqItems();
+    });
+  });
+
+  // Search Input Filter
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      filterFaqItems();
+    });
+  }
 }
 
 /**
@@ -126,12 +180,39 @@ function initFormValidation() {
   }
   
   if (contactForm) {
+    // Topic Pills Toggler
+    const inquiryPills = contactForm.querySelectorAll('.inquiry-type-pill');
+    inquiryPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        inquiryPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const radio = pill.querySelector('input[type="radio"]');
+        if (radio) radio.checked = true;
+      });
+    });
+
     contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
       if (!validateForm(contactForm)) {
-        e.preventDefault();
-      } else {
-        alert('Thank you for your message! Our team will get back to you soon.');
+        return;
       }
+      
+      const submitBtn = contactForm.querySelector('#contactSubmitBtn');
+      const originalText = submitBtn ? submitBtn.innerHTML : 'Send Message';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="loading-spinner"></span> Sending Message...';
+      }
+
+      setTimeout(() => {
+        const nameVal = document.getElementById('cName') ? document.getElementById('cName').value : 'Patient';
+        alert(`Thank you, ${nameVal}! Your message has been received. Our Putalisadak front desk will get back to you shortly.`);
+        contactForm.reset();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }
+      }, 500);
     });
   }
 }
@@ -218,9 +299,133 @@ function initTestimonialTabs() {
 }
 
 /**
+ * Enhanced Book Appointment Page Logic
+ */
+function initBookingPage() {
+  const bookingForm = document.getElementById('bookingForm');
+  const dateInput = document.getElementById('bDate');
+  const timeHiddenInput = document.getElementById('bTime');
+  const timeButtons = document.querySelectorAll('.time-slot-btn');
+  const typeCards = document.querySelectorAll('.patient-type-card');
+  const confirmModal = document.getElementById('bookingConfirmationModal');
+  const closeConfirmBtn = document.getElementById('closeConfirmModalBtn');
+  const doneConfirmBtn = document.getElementById('doneBookingModalBtn');
+
+  // Set minimum date to today
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+    if (!dateInput.value) {
+      dateInput.value = today;
+    }
+  }
+
+  // Patient Type Cards Click Handler
+  typeCards.forEach(card => {
+    card.addEventListener('click', () => {
+      typeCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      const radio = card.querySelector('input[type="radio"]');
+      if (radio) radio.checked = true;
+    });
+  });
+
+  // Time Slot Buttons Click Handler
+  timeButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      timeButtons.forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      const timeVal = btn.getAttribute('data-time') || btn.innerText;
+      if (timeHiddenInput) {
+        timeHiddenInput.value = timeVal;
+      }
+    });
+  });
+
+  // Booking Form Submission & Confirmation Modal
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!validateForm(bookingForm)) {
+        return;
+      }
+
+      const submitBtn = document.getElementById('bookingSubmitBtn');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="loading-spinner"></span> Submitting Booking...';
+      }
+
+      setTimeout(() => {
+        // Collect form data
+        const nameVal = document.getElementById('bName') ? document.getElementById('bName').value : 'Patient';
+        const treatmentSelect = document.getElementById('bTreatment');
+        const treatmentText = (treatmentSelect && treatmentSelect.selectedIndex >= 0) 
+          ? treatmentSelect.options[treatmentSelect.selectedIndex].text.split('(')[0].trim() 
+          : 'Dental Consultation';
+        const dateVal = dateInput ? dateInput.value : 'Upcoming';
+        const timeVal = timeHiddenInput ? timeHiddenInput.value : '10:00 AM';
+        
+        // Generate a random Reference ID
+        const refId = 'BS-' + (new Date().getFullYear()) + '-' + Math.floor(1000 + Math.random() * 9000);
+
+        // Populate confirmation modal
+        const nameSpan = document.getElementById('confirmPatientName');
+        const refSpan = document.getElementById('confirmBookingRef');
+        const treatTd = document.getElementById('confirmTreatment');
+        const dateTd = document.getElementById('confirmDateTime');
+
+        if (nameSpan) nameSpan.innerText = nameVal;
+        if (refSpan) refSpan.innerText = 'Ref: ' + refId;
+        if (treatTd) treatTd.innerText = treatmentText;
+        if (dateTd) dateTd.innerText = dateVal + ' at ' + timeVal;
+
+        // Reset submit button
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Confirm Appointment Request (100% Free)
+          `;
+        }
+
+        // Show confirmation modal
+        if (confirmModal) {
+          confirmModal.classList.add('active');
+          document.body.classList.add('modal-open');
+        }
+
+        // Reset form
+        bookingForm.reset();
+        if (dateInput) dateInput.value = new Date().toISOString().split('T')[0];
+      }, 600);
+    });
+  }
+
+  // Close Confirmation Modal Handlers
+  if (closeConfirmBtn) {
+    closeConfirmBtn.addEventListener('click', () => {
+      if (confirmModal) confirmModal.classList.remove('active');
+      document.body.classList.remove('modal-open');
+    });
+  }
+
+  if (doneConfirmBtn) {
+    doneConfirmBtn.addEventListener('click', () => {
+      if (confirmModal) confirmModal.classList.remove('active');
+      document.body.classList.remove('modal-open');
+      window.location.href = '/';
+    });
+  }
+}
+
+/**
  * Dynamic Booking Modal Popup Handler
  */
 function initBookingModal() {
+  initBookingPage();
+
   // If the user is on the /book/ page, don't show the modal popup, just use the inline form
   if (window.location.pathname.includes('/book/') || window.location.pathname.includes('book/index.html')) {
     return;
@@ -243,6 +448,14 @@ function openBookingModal() {
     modal = createBookingModalDOM();
     document.body.appendChild(modal);
     setupModalEvents(modal);
+  }
+
+  // Set min date
+  const mDate = modal.querySelector('#mbDate');
+  if (mDate) {
+    const today = new Date().toISOString().split('T')[0];
+    mDate.min = today;
+    if (!mDate.value) mDate.value = today;
   }
 
   document.body.classList.add('modal-open');
@@ -273,65 +486,85 @@ function createBookingModalDOM() {
   modal.id = 'bookingModal';
   
   modal.innerHTML = `
-    <div class="booking-modal-content">
+    <div class="booking-modal-content" style="max-width: 580px;">
       <div class="booking-modal-header">
-        <h3>Book an Appointment</h3>
+        <h3>Book Dental Appointment</h3>
         <button class="booking-modal-close" id="closeBookingModalBtn" aria-label="Close modal">&times;</button>
       </div>
       <div class="booking-modal-body">
         <form id="modalBookingForm" novalidate>
-          <div class="form-group">
-            <label for="mbName" class="form-label">Full Name</label>
-            <input type="text" id="mbName" class="form-control" placeholder="Enter your full name" required>
+          <div class="grid-2" style="margin-bottom: 0;">
+            <div class="form-group">
+              <label for="mbName" class="form-label">Full Name *</label>
+              <input type="text" id="mbName" class="form-control" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="mbPhone" class="form-label">Phone Number *</label>
+              <input type="tel" id="mbPhone" class="form-control" placeholder="98XXXXXXXX / +977" required>
+            </div>
           </div>
+
           <div class="form-group">
-            <label for="mbPhone" class="form-label">Phone Number</label>
-            <input type="tel" id="mbPhone" class="form-control" placeholder="Enter your phone number" required>
+            <label for="mbEmail" class="form-label">Email Address *</label>
+            <input type="email" id="mbEmail" class="form-control" placeholder="name@example.com" required>
           </div>
+
           <div class="form-group">
-            <label for="mbEmail" class="form-label">Email Address</label>
-            <input type="email" id="mbEmail" class="form-control" placeholder="Enter your email address" required>
-          </div>
-          <div class="form-group">
-            <label for="mbTreatment" class="form-label">Preferred Treatment</label>
+            <label for="mbTreatment" class="form-label">Select Treatment (22 Procedures) *</label>
             <select id="mbTreatment" class="form-control" required>
-              <option value="">Select Treatment Category</option>
-              <option value="checkup">Dental Checkup (Diagnostic)</option>
-              <option value="cleaning">Professional Teeth Cleaning</option>
-              <option value="fillings">Tooth Composite Filling</option>
-              <option value="whitening">Teeth Whitening</option>
-              <option value="veneers">Dental Veneers</option>
-              <option value="makeover">Smile Makeover</option>
-              <option value="crowns">Dental Crowns / Bridges</option>
+              <option value="">-- Choose Dental Treatment --</option>
+              <optgroup label="🦷 General &amp; Endodontics">
+                <option value="teeth-cleaning">Teeth Cleaning (Ultrasonic Scaling)</option>
+                <option value="scaling-and-polishing">Scaling &amp; Polishing (Deep Care)</option>
+                <option value="dental-checkup">Dental Checkup &amp; X-Rays</option>
+                <option value="dental-fillings">Composite Tooth Filling</option>
+                <option value="gic-filling">GIC Fluoride Filling</option>
+                <option value="root-canal-treatment">Root Canal (RCT)</option>
+                <option value="molar-single-sitting-rct">Single-Sitting Molar RCT</option>
+              </optgroup>
+              <optgroup label="💎 Cosmetic &amp; Orthodontics">
+                <option value="teeth-whitening">Laser Teeth Whitening</option>
+                <option value="dental-veneers">Porcelain E.max Veneers</option>
+                <option value="smile-makeover">Complete 3D Smile Makeover</option>
+                <option value="cosmetic-dentistry">Cosmetic Dentistry</option>
+                <option value="clear-aligners">Clear Aligners (Invisible)</option>
+                <option value="braces">Orthodontic Braces</option>
+                <option value="gap-closure">Teeth Gap Closure</option>
+              </optgroup>
+              <optgroup label="👑 Restorative &amp; Implants">
+                <option value="dental-crowns">Zirconia Crowns</option>
+                <option value="pfm-metal-crowns">PFM &amp; Metal Crowns</option>
+                <option value="dental-bridges">Fixed Dental Bridges</option>
+                <option value="dentures">Complete &amp; Partial Dentures</option>
+                <option value="dental-implants">Dental Implants (Titanium)</option>
+                <option value="bone-grafting-sinus-lift">Bone Graft &amp; Sinus Lift</option>
+                <option value="wisdom-tooth-extraction">Wisdom Tooth Surgery</option>
+                <option value="tooth-extraction">Simple Tooth Extraction</option>
+              </optgroup>
             </select>
           </div>
-          <div class="form-group">
-            <label for="mbDoctor" class="form-label">Preferred Doctor (Optional)</label>
-            <select id="mbDoctor" class="form-control">
-              <option value="">No Preference / First Available</option>
-              <option value="sharma">Dr. Manish Sharma (Orthodontist)</option>
-              <option value="shakya">Dr. Anjana Shakya (Root Canal Specialist)</option>
-              <option value="shrestha">Dr. Rajesh Shrestha (Oral Surgeon)</option>
-            </select>
+
+          <div class="grid-2" style="margin-bottom: 0;">
+            <div class="form-group">
+              <label for="mbDate" class="form-label">Preferred Date *</label>
+              <input type="date" id="mbDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="mbTime" class="form-label">Time Slot *</label>
+              <select id="mbTime" class="form-control" required>
+                <option value="10:00 AM">Morning (10:00 AM - 12:30 PM)</option>
+                <option value="02:00 PM">Afternoon (01:00 PM - 04:00 PM)</option>
+                <option value="05:00 PM">Evening (04:30 PM - 06:30 PM)</option>
+              </select>
+            </div>
           </div>
+
           <div class="form-group">
-            <label for="mbDate" class="form-label">Preferred Date</label>
-            <input type="date" id="mbDate" class="form-control" required>
+            <label for="mbMsg" class="form-label">Symptoms / Notes (Optional)</label>
+            <textarea id="mbMsg" class="form-control" placeholder="Describe symptoms or treatment goals" style="min-height: 80px;"></textarea>
           </div>
-          <div class="form-group">
-            <label for="mbTime" class="form-label">Preferred Time Slot</label>
-            <select id="mbTime" class="form-control" required>
-              <option value="">Select Preferred Time</option>
-              <option value="morning">Morning (10:00 AM - 12:30 PM)</option>
-              <option value="afternoon">Afternoon (1:00 PM - 4:00 PM)</option>
-              <option value="evening">Evening (4:00 PM - 6:30 PM)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="mbMsg" class="form-label">Message / Details (Optional)</label>
-            <textarea id="mbMsg" class="form-control" placeholder="Describe any dental problems or symptoms you are experiencing"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" id="modalBookingSubmitBtn">Book Appointment</button>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;" id="modalBookingSubmitBtn">Confirm Appointment Request</button>
         </form>
       </div>
     </div>
@@ -366,7 +599,8 @@ function setupModalEvents(modal) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       if (validateForm(form)) {
-        alert('Thank you for booking! We will contact you shortly to confirm your appointment.');
+        const nameVal = modal.querySelector('#mbName') ? modal.querySelector('#mbName').value : 'Patient';
+        alert(`Thank you, ${nameVal}! Your appointment request has been logged. Our Putalisadak front desk will call you within 15 minutes to confirm.`);
         closeBookingModal();
       }
     });

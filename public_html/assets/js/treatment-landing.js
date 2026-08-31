@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBeforeAfterSlider();
   initBookingForm();
   initSmoothScroll();
+  initTreatmentFaqs();
 });
 
 /* --- Before / After Drag Slider --- */
@@ -108,3 +109,90 @@ function initSmoothScroll() {
     });
   });
 }
+
+/* --- Categorized Treatment FAQs Handler --- */
+function initTreatmentFaqs() {
+  const faqTriggers = document.querySelectorAll('.treatment-faq-trigger');
+  const catButtons = document.querySelectorAll('.treatment-faq-cat-btn');
+  const searchInput = document.getElementById('treatmentFaqSearchInput');
+  const faqItems = document.querySelectorAll('.treatment-faq-item');
+  const emptyState = document.getElementById('treatmentFaqEmptyState');
+
+  if (faqTriggers.length === 0) return;
+
+  // Accordion Toggle
+  faqTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parent = trigger.closest('.treatment-faq-item');
+      if (!parent) return;
+      const isCurrentlyActive = parent.classList.contains('active');
+
+      // Close all other FAQs in the list
+      faqItems.forEach(item => {
+        item.classList.remove('active');
+        const answer = item.querySelector('.treatment-faq-answer');
+        if (answer) answer.style.maxHeight = null;
+      });
+
+      // Toggle clicked FAQ
+      if (!isCurrentlyActive) {
+        parent.classList.add('active');
+        const answer = parent.querySelector('.treatment-faq-answer');
+        if (answer) {
+          answer.style.maxHeight = (answer.scrollHeight + 36) + 'px';
+        }
+      }
+    });
+  });
+
+  // Filter Logic
+  let activeCategory = 'all';
+  let searchQuery = '';
+
+  function filterTreatmentFaqs() {
+    let visibleCount = 0;
+    const query = searchQuery.trim().toLowerCase();
+
+    faqItems.forEach(item => {
+      const category = item.getAttribute('data-faq-category') || 'procedure';
+      const text = item.textContent.toLowerCase();
+
+      const matchesCategory = (activeCategory === 'all') || (category === activeCategory);
+      const matchesSearch = (query === '') || text.includes(query);
+
+      if (matchesCategory && matchesSearch) {
+        item.style.display = '';
+        visibleCount++;
+      } else {
+        item.style.display = 'none';
+        item.classList.remove('active');
+        const ans = item.querySelector('.treatment-faq-answer');
+        if (ans) ans.style.maxHeight = null;
+      }
+    });
+
+    if (emptyState) {
+      emptyState.style.display = (visibleCount === 0) ? 'block' : 'none';
+    }
+  }
+
+  // Category Tab Click
+  catButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = btn.getAttribute('data-filter') || 'all';
+      filterTreatmentFaqs();
+    });
+  });
+
+  // Search Input Filter
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      filterTreatmentFaqs();
+    });
+  }
+}
+

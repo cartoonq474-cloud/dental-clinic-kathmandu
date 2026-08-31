@@ -16,32 +16,109 @@
   <meta name="google-site-verification" content="_Ikr94h6MWyrnweniNbtq91-Hxwscgbk1RAyVIx983A" />
   <meta name="robots" content="index, follow">
   
-  <title>Comprehensive Dental Treatments | Kathmandu Dental Clinic</title>
-  <meta name="description" content="Explore specialized dental treatments in Putalisadak, Kathmandu. Expert teeth whitening, ultrasonic cleaning, composite fillings, veneers, crowns & bridges.">
+  <title>Comprehensive Dental Treatments & Cost Guide Kathmandu | BrightSmile Dental Clinic</title>
+  <meta name="description" content="Explore advanced dental treatments in Putalisadak, Kathmandu. Transparent NPR pricing for root canals, laser teeth whitening, dental implants, zirconia crowns, clear aligners & wisdom tooth extraction.">
   <link rel="canonical" href="https://dentalinkathmandu.com/treatments/">
   
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
   
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="../assets/css/treatment-landing.css">
 
+  <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Dentist",
-    "@id": "https://dentalinkathmandu.com/#clinic",
-    "name": "BrightSmile Dental Clinic",
-    "url": "https://dentalinkathmandu.com",
-    "telephone": "+977-9800000000",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Putalisadak, Opposite Kumari Bank",
-      "addressLocality": "Kathmandu",
-      "postalCode": "44600",
-      "addressCountry": "NP"
-    }
+    "@graph": [
+      {
+        "@type": "Dentist",
+        "@id": "https://dentalinkathmandu.com/#clinic",
+        "name": "BrightSmile Dental Clinic",
+        "url": "https://dentalinkathmandu.com",
+        "telephone": "+977-9800000000",
+        "priceRange": "NPR 500 - NPR 200,000",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Putalisadak, Opposite Kumari Bank",
+          "addressLocality": "Kathmandu",
+          "postalCode": "44600",
+          "addressCountry": "NP"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "27.7033",
+          "longitude": "85.3216"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "19:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday"],
+            "opens": "10:00",
+            "closes": "17:00"
+          }
+        ]
+      },
+      {
+        "@type": "MedicalWebPage",
+        "@id": "https://dentalinkathmandu.com/treatments/#webpage",
+        "url": "https://dentalinkathmandu.com/treatments/",
+        "name": "Dental Treatments in Kathmandu - Procedures & NPR Fee Guide",
+        "description": "Comprehensive guide to demanded dental treatments in Nepal, including general dentistry, root canals, cosmetic procedures, orthodontics, crowns, bridges, and dental implants.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://dentalinkathmandu.com/#website",
+          "name": "BrightSmile Dental Clinic Kathmandu",
+          "url": "https://dentalinkathmandu.com"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dentalinkathmandu.com/treatments/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much do dental treatments cost in Kathmandu, Nepal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dental treatment costs in Kathmandu vary based on the procedure. Routine scaling & polishing ranges from NPR 1,500 to 4,000, composite tooth fillings from NPR 1,500 to 6,500, root canal treatment from NPR 4,500 to 22,000, teeth whitening from NPR 8,000 to 25,000, zirconia crowns from NPR 15,000 to 28,000, and dental implants from NPR 70,000 to 2,00,000."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Root Canal Treatment (RCT) painful at BrightSmile Dental?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. We utilize computer-controlled local anesthesia and rotary endodontic instruments, ensuring that your root canal procedure is completely pain-free and comfortable. We also offer single-sitting RCT for eligible patients."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between Metal Braces and Clear Aligners?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Traditional metal braces (NPR 40,000 – 80,000) use brackets and wires to align teeth, while Clear Aligners (NPR 1,20,000 – 3,00,000) are virtually invisible, custom-made removable transparent trays that straighten teeth discreetly without food restrictions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long do Dental Implants and Zirconia Crowns last?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "With proper oral hygiene and regular 6-month checkups, premium dental implants can last a lifetime (25+ years), and CAD/CAM Zirconia crowns typically last 15 to 20+ years."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -75,137 +152,1686 @@
     </div>
   </header>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="container">
-      <h1>Our Dental Treatments in Kathmandu</h1>
-      <div class="breadcrumbs">
-        <a href="/">Home</a> <span>/</span> <span>Treatments</span>
+  <!-- Treatments Hero Section -->
+  <section class="treatments-hero">
+    <div class="container treatments-hero-content">
+      <div class="hero-feature-badges">
+        <span class="hero-feature-badge"><span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px; color: var(--primary-color);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span> Putalisadak, Kathmandu</span>
+        <span class="hero-feature-badge"><span style="display:inline-flex; align-items:center; vertical-align:middle; margin-right:4px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22V7a3 3 0 0 0-3-3H6"/><circle cx="14" cy="4" r="1"/><path d="M12 14h2"/></svg></span> HD Digital X-Rays & 3D Imaging</span>
+        <span class="hero-feature-badge"><span style="display:inline-flex; align-items:center; vertical-align:middle; margin-right:4px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> 100% Hospital-Grade Sterilization</span>
+        <span class="hero-feature-badge"><span style="display:inline-flex; align-items:center; vertical-align:middle; margin-right:4px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg></span> Painless Rotary Dentistry</span>
+      </div>
+      <h1>Specialized Dental Treatments in Kathmandu</h1>
+      <p>
+        From pain-free root canals and aesthetic tooth-coloured fillings to Swiss dental implants, laser whitening, and invisible clear aligners. Explore procedures, clinical steps, and transparent Nepal pricing below.
+      </p>
+      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+        <a href="#treatmentCardsSection" class="btn btn-primary">Browse All Treatments ↓</a>
+        <a href="#pricingGuideSection" class="btn btn-secondary">View Nepal Price Guide</a>
       </div>
     </div>
   </section>
 
-  <!-- Treatments Hub Grid -->
+  <!-- Interactive Search & Category Filter Bar -->
+  <section class="container" id="treatmentCardsSection">
+    <div class="treatment-filter-bar">
+      <div class="treatment-search-wrap">
+        <span class="treatment-search-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input 
+          type="text" 
+          id="treatmentSearchInput" 
+          class="treatment-search-input" 
+          placeholder="Search treatment (e.g., Root Canal, Braces, Implants, Filling, Wisdom Tooth)..."
+          aria-label="Search dental treatments"
+        >
+      </div>
+      <div class="treatment-filter-pills" id="treatmentFilterPills">
+        <button class="filter-pill active" data-category="all">All Treatments (22)</button>
+        <button class="filter-pill" data-category="general">General &amp; RCT (7)</button>
+        <button class="filter-pill" data-category="cosmetic">Cosmetic &amp; Ortho (7)</button>
+        <button class="filter-pill" data-category="restorative">Crowns &amp; Bridges (4)</button>
+        <button class="filter-pill" data-category="surgical">Implants &amp; Surgery (4)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatments Catalog Section (22 Treatments in 4 Categories) -->
+  <section class="section" style="padding-top: 2rem;">
+    <div class="container">
+
+      <!-- ========================================================
+           CATEGORY 1: GENERAL DENTISTRY & ROOT CANALS (7 Cards)
+           ======================================================== -->
+      <div class="category-block" data-section-category="general">
+        <div class="category-heading-wrap">
+          <h3><span style="display:inline-flex; align-items:center; vertical-align:middle; margin-right:0.35rem; color:var(--primary-color);"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.5 2 6 4.5 6 8c0 3 1.5 6 2 9.5.5 3.5 2.5 4.5 4 4.5s3.5-1 4-4.5c.5-3.5 2-6.5 2-9.5 0-3.5-2.5-6-6-6z"/></svg></span> 1. General Dentistry &amp; Painless Endodontics</h3>
+          <span class="category-heading-badge">Everyday &amp; Essential Care</span>
+        </div>
+        
+        <div class="treatment-grid-pro">
+
+          <!-- 1. Teeth Cleaning (Scaling & Polishing) -->
+          <div class="treatment-card-pro" data-treatment-tags="general scaling polishing cleaning teeth hygiene plaque tartar">
+            <span class="treatment-card-badge-top">Routine Care</span>
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Professional Teeth Cleaning</h4>
+                <span class="treatment-subtitle-tag">Ultrasonic Calculus &amp; Plaque Removal</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Thorough ultrasonic scaling to eliminate hardened tartar, yellow dental calculus, and stubborn tea/tobacco stains to prevent gingivitis and bad breath.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Painless ultrasonic scaling technology</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Prophylaxis paste stain polishing included</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Duration: 30–45 mins (1 visit)</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Price Range</span>
+                <span class="price-value">NPR 1,500 – 3,000</span>
+              </div>
+              <a href="/treatments/teeth-cleaning/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 2. Scaling and Polishing (Deep Periodontal Hygiene) -->
+          <div class="treatment-card-pro" data-treatment-tags="general scaling polishing deep cleaning gum disease gingivitis periodontal">
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V7a5 5 0 0 1 10 0v4"/><rect x="3" y="11" width="18" height="10" rx="3"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Scaling &amp; Polishing</h4>
+                <span class="treatment-subtitle-tag">Subgingival Tartar &amp; Gum Therapy</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Specialized deep cleaning targeting subgingival tartar pockets to immediately stop bleeding gums, resolve swelling, and protect bone attachments.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Curative treatment for bleeding gingivitis</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Micro-polishing prevents rapid stain re-adhesion</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Recommended every 6 months</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Price Range</span>
+                <span class="price-value">NPR 1,500 – 3,500</span>
+              </div>
+              <a href="/treatments/scaling-and-polishing/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 3. Comprehensive Dental Checkup -->
+          <div class="treatment-card-pro" data-treatment-tags="general checkup consultation exam oral screening x-ray diagnostic">
+            <span class="treatment-card-badge-top">Prevention</span>
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Dental Checkup &amp; Consultation</h4>
+                <span class="treatment-subtitle-tag">3D Oral &amp; Digital X-Ray Screening</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Comprehensive 30-minute oral evaluation featuring high-definition intraoral camera imaging, digital low-dose X-rays, and a transparent written treatment plan.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> High-definition intraoral camera review</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Low-dose digital radiograph diagnostics</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Transparent quote with zero obligation</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Consultation Fee</span>
+                <span class="price-value">NPR 500 – 1,000</span>
+              </div>
+              <a href="/treatments/dental-checkup/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 4. Composite Fillings -->
+          <div class="treatment-card-pro featured-treatment" data-treatment-tags="general fillings composite cavity tooth decay white filling">
+            <span class="treatment-card-badge-top">Most Popular</span>
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.5 2 6 4.5 6 8c0 3 1.5 6 2 9.5.5 3.5 2.5 4.5 4 4.5s3.5-1 4-4.5c.5-3.5 2-6.5 2-9.5 0-3.5-2.5-6-6-6z"/><path d="M9 7c1 1.5 2 2 3 2s2-.5 3-2"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Composite (Tooth-Colored) Filling</h4>
+                <span class="treatment-subtitle-tag">Aesthetic Cavity Restoration</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              High-strength nano-hybrid composite resin that blends seamlessly with your natural tooth shade. Restores chipped or decayed teeth with zero mercury.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Exact natural tooth-shade matching</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Direct adhesive bond preserves healthy tooth</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Duration: 30 mins per tooth</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Price Range</span>
+                <span class="price-value">NPR 1,500 – 4,500</span>
+              </div>
+              <a href="/treatments/dental-fillings/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 5. GIC Filling -->
+          <div class="treatment-card-pro" data-treatment-tags="general gic filling glass ionomer fluoride pediatric root caries">
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31L4.69 18.2A2 2 0 0 0 6.4 21h11.2a2 2 0 0 0 1.71-2.8L14 9.31V2h-4z"/><line x1="8.5" y1="2" x2="15.5" y2="2"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>GIC (Glass Ionomer) Filling</h4>
+                <span class="treatment-subtitle-tag">Fluoride-Releasing Protection</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Biocompatible cement ideal for root surface cavities, cervical erosion, and pediatric milk teeth restorations. Continuously releases fluoride to stop further decay.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Chemical adhesion to enamel &amp; dentin</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Continuous fluoride anti-decay barrier</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Budget-friendly restorative care</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Price Range</span>
+                <span class="price-value">NPR 1,200 – 2,500</span>
+              </div>
+              <a href="/treatments/gic-filling/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 6. Root Canal Treatment -->
+          <div class="treatment-card-pro" data-treatment-tags="general rct root canal endodontics anterior premolar tooth pain nerve infection">
+            <span class="treatment-card-badge-top">Painless</span>
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Root Canal Treatment (RCT)</h4>
+                <span class="treatment-subtitle-tag">Painless Dental Nerve Therapy</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Saves deeply infected or fractured teeth from extraction. Removes infected pulp, disinfects canals with apex locator accuracy, and hermetically seals the tooth.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Digital apex locator &amp; rotary NiTi files</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Completely painless local anesthesia</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Relieves severe throbbing toothache</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Price Range</span>
+                <span class="price-value">NPR 4,500 – 12,000</span>
+              </div>
+              <a href="/treatments/root-canal-treatment/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 7. Single-Sitting Molar RCT -->
+          <div class="treatment-card-pro featured-treatment" data-treatment-tags="general rct molar single sitting root canal complex pulpitis back tooth">
+            <span class="treatment-card-badge-top">Fast-Track</span>
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22V7a3 3 0 0 0-3-3H6"/><circle cx="14" cy="4" r="1"/><path d="M12 14h2"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Single-Sitting Molar RCT</h4>
+                <span class="treatment-subtitle-tag">1-Visit Molar Pulp Therapy</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Specialized fast-track protocol for multi-rooted molars. Completes cleaning, shaping, and warm gutta-percha obturation in one single 60–90 minute session.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Single 60–90 min appointment</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Sterile rubber dam isolation standard</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Immediate return to work / college</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Price Range</span>
+                <span class="price-value">NPR 8,000 – 12,000</span>
+              </div>
+              <a href="/treatments/molar-single-sitting-rct/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ========================================================
+           CATEGORY 2: COSMETIC DENTISTRY & ORTHODONTICS (7 Cards)
+           ======================================================== -->
+      <div class="category-block" data-section-category="cosmetic">
+        <div class="category-heading-wrap">
+          <h3><span style="display:inline-flex; align-items:center; vertical-align:middle; margin-right:0.35rem; color:var(--primary-color);"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8 2.4-7.2-6-4.8h7.6z"/></svg></span> 2. Cosmetic Dentistry &amp; Orthodontics</h3>
+          <span class="category-heading-badge">Aesthetic &amp; Smile Alignment</span>
+        </div>
+        
+        <div class="treatment-grid-pro">
+
+          <!-- 8. Laser In-Clinic Teeth Whitening -->
+          <div class="treatment-card-pro featured-treatment" data-treatment-tags="cosmetic teeth whitening bleaching laser yellow teeth smile brightness">
+            <span class="treatment-card-badge-top">Instant Results</span>
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="10" y1="3" x2="6" y2="9"/><line x1="14" y1="3" x2="18" y2="9"/><line x1="12" y1="21" x2="6" y2="9"/><line x1="12" y1="21" x2="18" y2="9"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Professional Laser Teeth Whitening</h4>
+                <span class="treatment-subtitle-tag">In-Clinic Power Bleaching</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Lightens tooth enamel up to 6–8 shades in a single 45-minute clinical session using advanced LED/Laser activation and gum-protective barriers.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Fast 45-minute in-chair transformation</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Anti-sensitivity enamel remineralization</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Supervised home kits also available</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Price Range</span>
+                <span class="price-value">NPR 8,000 – 25,000</span>
+              </div>
+              <a href="/treatments/teeth-whitening/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 9. Porcelain & Emax Dental Veneers -->
+          <div class="treatment-card-pro" data-treatment-tags="cosmetic veneers porcelain emax ceramic smile makeover cosmetic laminate">
+            <span class="treatment-card-badge-top">Hollywood Smile</span>
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Porcelain &amp; E.max Veneers</h4>
+                <span class="treatment-subtitle-tag">Ultra-Thin Custom Ceramic Shells</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Micro-thin custom-crafted porcelain laminates bonded to front teeth to permanently correct deep stains, chips, minor misalignment, and irregular shapes.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Stain-resistant German IPS E.max® glass ceramic</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 15–20+ year aesthetic lifespan</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Conservative 0.3–0.5mm enamel prep</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Per Tooth</span>
+                <span class="price-value">NPR 12,000 – 25,000</span>
+              </div>
+              <a href="/treatments/dental-veneers/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 10. Complete Smile Makeover -->
+          <div class="treatment-card-pro" data-treatment-tags="cosmetic smile makeover digital smile design dsd aesthetic teeth transformation">
+            <span class="treatment-card-badge-top">Full Transformation</span>
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Complete Smile Makeover</h4>
+                <span class="treatment-subtitle-tag">3D Digital Smile Design (DSD)</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Holistic multi-disciplinary smile transformation combining 3D facial aesthetic analysis, veneers, whitening, gum contouring, and alignment for a dream smile.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 3D digital simulation preview before starting</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Combines veneers, laser gum lift &amp; alignment</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Customized to your facial harmony &amp; lips</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Custom Package</span>
+                <span class="price-value">NPR 50,000 – 3,00,000</span>
+              </div>
+              <a href="/treatments/smile-makeover/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 11. Cosmetic Dentistry & Aesthetic Care -->
+          <div class="treatment-card-pro" data-treatment-tags="cosmetic aesthetic dentistry bonding gum depigmentation smile design">
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2z"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Cosmetic Dentistry Hub</h4>
+                <span class="treatment-subtitle-tag">Aesthetic Smile Enhancements</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Comprehensive aesthetic solutions including cosmetic bonding, laser gum depigmentation, tooth contouring, and enamel micro-abrasion for a radiant smile.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Minimally invasive aesthetic treatments</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Laser gum aesthetics &amp; dark spot removal</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Natural tooth translucency restoration</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Starting From</span>
+                <span class="price-value">NPR 4,000 – 25,000</span>
+              </div>
+              <a href="/treatments/cosmetic-dentistry/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 12. Clear Aligners -->
+          <div class="treatment-card-pro featured-treatment" data-treatment-tags="cosmetic orthodontics clear aligners invisible braces teeth straightening invisalign">
+            <span class="treatment-card-badge-top">Invisible Straightening</span>
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Clear Aligners (Invisible Braces)</h4>
+                <span class="treatment-subtitle-tag">Custom 3D Removable Trays</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Virtually invisible, removable aligners that gently straighten crowded or gapped teeth without painful metal wires, brackets, or dietary restrictions.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 100% discrete &amp; removable for meals</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 3D digital intraoral scan planning</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Treatment time: 6–18 months</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Full Treatment</span>
+                <span class="price-value">NPR 1,20,000 – 2,80,000</span>
+              </div>
+              <a href="/treatments/clear-aligners/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 13. Orthodontic Braces -->
+          <div class="treatment-card-pro" data-treatment-tags="cosmetic orthodontics braces metal ceramic self ligating crooked teeth bite correction">
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Orthodontic Braces</h4>
+                <span class="treatment-subtitle-tag">Metal, Ceramic &amp; Self-Ligating</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Time-tested orthodontic alignment for correcting severe crowding, overbites, underbites, and complex jaw misalignments in teens and adults.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> High-grade stainless steel or clear ceramic</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Gold standard for complex bite corrections</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Flexible monthly installment plans</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Full Treatment</span>
+                <span class="price-value">NPR 40,000 – 85,000</span>
+              </div>
+              <a href="/treatments/braces/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 14. Teeth Gap Closure -->
+          <div class="treatment-card-pro" data-treatment-tags="cosmetic gap closure diastema composite bonding midline spacing">
+            <span class="treatment-card-badge-top">Single Visit</span>
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/><polyline points="15 18 21 12 15 6"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Teeth Gap Closure (Diastema)</h4>
+                <span class="treatment-subtitle-tag">Single-Sitting Composite &amp; Veneers</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Close noticeable front tooth gaps in a single 45-minute painless appointment using artistic composite bonding or permanent porcelain veneers.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Single 45-min visit composite bonding</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Zero tooth drilling or enamel removal</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Instant, natural aesthetic transformation</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Price Range</span>
+                <span class="price-value">NPR 3,500 – 15,000</span>
+              </div>
+              <a href="/treatments/gap-closure/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ========================================================
+           CATEGORY 3: RESTORATIVE DENTISTRY, CROWNS & BRIDGES (4 Cards)
+           ======================================================== -->
+      <div class="category-block" data-section-category="restorative">
+        <div class="category-heading-wrap">
+          <h3><span style="display:inline-flex; align-items:center; vertical-align:middle; margin-right:0.35rem; color:var(--primary-color);"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14v2H5v-2z"/></svg></span> 3. Restorative Dentistry, Crowns &amp; Bridges</h3>
+          <span class="category-heading-badge">Tooth Protection &amp; Reconstruction</span>
+        </div>
+        
+        <div class="treatment-grid-pro">
+
+          <!-- 15. CAD/CAM Zirconia Crowns -->
+          <div class="treatment-card-pro featured-treatment" data-treatment-tags="restorative crowns zirconia ceramic cad cam tooth cap metal free">
+            <span class="treatment-card-badge-top">Premium Quality</span>
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="10" y1="3" x2="6" y2="9"/><line x1="14" y1="3" x2="18" y2="9"/><line x1="12" y1="21" x2="6" y2="9"/><line x1="12" y1="21" x2="18" y2="9"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>CAD/CAM Zirconia Dental Crowns</h4>
+                <span class="treatment-subtitle-tag">100% Metal-Free Ceramic Caps</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Computer-milled solid monolithic and multi-layered zirconia crowns offering unbreakable chewing strength (1200+ MPa) and lifelike natural aesthetics.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 10–15 Year warranty card included</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 100% biocompatible, zero black gumlines</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Digital intraoral 3D scan precision</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Per Crown</span>
+                <span class="price-value">NPR 15,000 – 28,000</span>
+              </div>
+              <a href="/treatments/dental-crowns/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 16. PFM & Metal Crowns -->
+          <div class="treatment-card-pro" data-treatment-tags="restorative pfm metal crowns porcelain fused to metal cast metal economical molar cap">
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>PFM &amp; Metal Crowns</h4>
+                <span class="treatment-subtitle-tag">Affordable Posterior Tooth Caps</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Porcelain-Fused-to-Metal (PFM) and full cast metal crowns provide high structural rigidity and chewing load resilience for cost-conscious back molar protection.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Certified nickel-free biocompatible alloys</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> High chewing strength for posterior molars</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Budget-friendly restorative durability</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Per Crown</span>
+                <span class="price-value">NPR 6,000 – 14,000</span>
+              </div>
+              <a href="/treatments/pfm-metal-crowns/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 17. Fixed Dental Bridges -->
+          <div class="treatment-card-pro" data-treatment-tags="restorative bridges fixed bridge 3-unit missing tooth replacement pontic">
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M4 15h16"/><path d="M4 11h16"/><path d="M4 7h16"/><path d="M6 7v12M18 7v12"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Fixed Dental Bridges (3-Unit)</h4>
+                <span class="treatment-subtitle-tag">Permanent Non-Surgical Tooth Replacement</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Custom-crafted fixed ceramic or zirconia prostheses that anchor securely onto neighboring teeth to seamlessly replace 1 or more missing teeth.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Fixed in place—no loose removable parts</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Restores normal chewing power &amp; speech</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Available in PFM &amp; Metal-Free Zirconia</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Per Unit</span>
+                <span class="price-value">NPR 6,000 – 18,000</span>
+              </div>
+              <a href="/treatments/dental-bridges/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 18. Dentures (Complete & Partial) -->
+          <div class="treatment-card-pro" data-treatment-tags="restorative dentures complete partial flexible valplast bps false teeth elderly">
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Complete &amp; Partial Dentures</h4>
+                <span class="treatment-subtitle-tag">BPS &amp; Flexible Valplast Prosthetics</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Comfortable, natural-looking removable dentures engineered for optimal suction and chewing stability in full-arch or multi-tooth loss cases.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Premium BPS precision complete dentures</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Unbreakable flexible Valplast partials</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Custom gum contouring &amp; shade matching</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Starting From</span>
+                <span class="price-value">NPR 12,000 – 55,000</span>
+              </div>
+              <a href="/treatments/dentures/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ========================================================
+           CATEGORY 4: DENTAL IMPLANTS & ORAL SURGERY (4 Cards)
+           ======================================================== -->
+      <div class="category-block" data-section-category="surgical">
+        <div class="category-heading-wrap">
+          <h3><span style="display:inline-flex; align-items:center; vertical-align:middle; margin-right:0.35rem; color:var(--primary-color);"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span> 4. Dental Implants &amp; Oral Surgery</h3>
+          <span class="category-heading-badge">Permanent Replacements &amp; Surgical Care</span>
+        </div>
+        
+        <div class="treatment-grid-pro">
+
+          <!-- 19. Single & Full Dental Implants -->
+          <div class="treatment-card-pro featured-treatment" data-treatment-tags="surgical implants dental implant titanium post permanent tooth replacement missing tooth straumann osstem">
+            <span class="treatment-card-badge-top">Lifetime Solution</span>
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Single &amp; Full Dental Implants</h4>
+                <span class="treatment-subtitle-tag">Permanent Titanium Tooth Replacement</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Titanium screw posts biologically integrated with jawbone to replicate natural tooth roots, capped with screw-retained CAD/CAM Zirconia crowns.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 98%+ Clinical osseointegration success rate</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Swiss Straumann® &amp; Korean Osstem® systems</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Preserves jawbone structure from shrinking</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Per Implant</span>
+                <span class="price-value">NPR 70,000 – 1,40,000</span>
+              </div>
+              <a href="/treatments/dental-implants/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 20. Bone Grafting & Sinus Lift -->
+          <div class="treatment-card-pro" data-treatment-tags="surgical bone graft sinus lift ridge augmentation bone regeneration bio-oss">
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M7 7l10 10M17 7L7 17"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Bone Grafting &amp; Sinus Lift</h4>
+                <span class="treatment-subtitle-tag">Jawbone Regeneration for Implants</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Advanced bone augmentation procedures using Swiss Bio-Oss® biomaterials to rebuild lost jawbone height and width for rock-solid dental implant anchorage.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Swiss Bio-Oss® &amp; PRF membrane technology</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Direct &amp; indirect crestal sinus elevation</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Enables implants in severe bone resorption</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Starting From</span>
+                <span class="price-value">NPR 15,000 – 60,000</span>
+              </div>
+              <a href="/treatments/bone-grafting-sinus-lift/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 21. Impacted Wisdom Tooth Surgery -->
+          <div class="treatment-card-pro" data-treatment-tags="surgical wisdom tooth extraction impacted molar surgery pericoronitis jaw pain">
+            <span class="treatment-card-badge-top">Surgical Specialist</span>
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.5 2 6 4.5 6 8c0 3 1.5 6 2 9.5.5 3.5 2.5 4.5 4 4.5s3.5-1 4-4.5c.5-3.5 2-6.5 2-9.5 0-3.5-2.5-6-6-6z"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Impacted Wisdom Tooth Surgery</h4>
+                <span class="treatment-subtitle-tag">Atraumatic Third Molar Sectioning</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Safe surgical extraction of horizontally or vertically impacted third molars by senior Oral Surgeons. Relieves severe jaw pain, swelling, and crowding.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Performed by Senior Oral &amp; Maxillofacial Surgeons</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Low-trauma bone sectioning for rapid recovery</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Digital OPG nerve canal mapping</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Per Tooth</span>
+                <span class="price-value">NPR 5,000 – 15,000</span>
+              </div>
+              <a href="/treatments/wisdom-tooth-extraction/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 22. Simple & Routine Tooth Extraction -->
+          <div class="treatment-card-pro" data-treatment-tags="surgical extraction simple tooth removal loose tooth broken root">
+            <div class="treatment-header-area">
+              <div class="treatment-icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+              </div>
+              <div class="treatment-title-group">
+                <h4>Simple / Routine Tooth Extraction</h4>
+                <span class="treatment-subtitle-tag">Gentle Non-Restorable Tooth Removal</span>
+              </div>
+            </div>
+            <p class="treatment-card-desc">
+              Gentle, minimally traumatic extraction of severely decayed, broken, or mobile teeth when conservative restorative options are no longer viable.
+            </p>
+            <ul class="treatment-points-list">
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Quick, pain-free chairside procedure</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Bone-preserving micro-luxator technique</li>
+              <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Comprehensive post-op pain management</li>
+            </ul>
+            <div class="treatment-card-footer">
+              <div class="treatment-price-block">
+                <span class="price-label">Per Tooth</span>
+                <span class="price-value">NPR 1,500 – 3,500</span>
+              </div>
+              <a href="/treatments/tooth-extraction/" class="treatment-action-btn">Learn More →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       COMPREHENSIVE NEPAL DENTAL TREATMENTS PRICE GUIDE TABLE
+       ======================================================== -->
+  <section class="section section-bg" id="pricingGuideSection">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Transparent Billing</span>
+        <h2 class="section-title">Demanded Dental Treatments Fee Guide (NPR)</h2>
+        <p class="section-description">
+          Complete verified pricing structure for dental treatments across Kathmandu, Nepal. No hidden surprise charges.
+        </p>
+      </div>
+
+      <div class="treatments-guide-table-wrap">
+        <table class="treatments-guide-table">
+          <thead>
+            <tr>
+              <th>Treatment Category</th>
+              <th>Specific Procedure / Service</th>
+              <th>Typical Duration & Visits</th>
+              <th>Approximate Fee (NPR)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 1. General Dentistry -->
+            <tr class="cat-row">
+              <td colspan="5">1. General Dentistry (Everyday, High-Volume Treatments)</td>
+            </tr>
+            <tr>
+              <td>General Care</td>
+              <td>Scaling & Polishing (Full Mouth Cleaning) <span class="table-badge-popular">Popular</span></td>
+              <td>1 Visit (30–45 min)</td>
+              <td class="table-price-tag">NPR 1,500 – 4,000</td>
+              <td><a href="/treatments/teeth-cleaning/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>General Care</td>
+              <td>Composite Filling (Tooth-Coloured Nano-Hybrid) <span class="table-badge-popular">Popular</span></td>
+              <td>1 Visit (30 min)</td>
+              <td class="table-price-tag">NPR 1,500 – 6,500</td>
+              <td><a href="/treatments/dental-fillings/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>General Care</td>
+              <td>GIC (Glass Ionomer Fluoride) Filling</td>
+              <td>1 Visit (20 min)</td>
+              <td class="table-price-tag">NPR 800 – 2,500</td>
+              <td><a href="/treatments/gic-filling/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>General Care</td>
+              <td>Simple Tooth Extraction</td>
+              <td>1 Visit (20 min)</td>
+              <td class="table-price-tag">NPR 500 – 3,000</td>
+              <td><a href="/treatments/tooth-extraction/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Oral Surgery</td>
+              <td>Surgical / Impacted Wisdom Tooth Extraction <span class="table-badge-popular">Specialist</span></td>
+              <td>1 Visit (45–60 min)</td>
+              <td class="table-price-tag">NPR 5,000 – 15,000</td>
+              <td><a href="/treatments/wisdom-tooth-extraction/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Endodontics</td>
+              <td>Root Canal Treatment (RCT) – Anterior (Front Tooth)</td>
+              <td>1–2 Visits</td>
+              <td class="table-price-tag">NPR 4,500 – 12,000</td>
+              <td><a href="/treatments/root-canal-treatment/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Endodontics</td>
+              <td>Root Canal Treatment (RCT) – Premolar</td>
+              <td>1–2 Visits</td>
+              <td class="table-price-tag">NPR 5,000 – 13,000</td>
+              <td><a href="/treatments/root-canal-treatment/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Endodontics</td>
+              <td>Root Canal Treatment (RCT) – Molar (Back Tooth) <span class="table-badge-popular">High Demand</span></td>
+              <td>1–3 Visits</td>
+              <td class="table-price-tag">NPR 6,000 – 20,000</td>
+              <td><a href="/treatments/root-canal-treatment/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Endodontics</td>
+              <td>Single-Sitting RCT (Fast-Track Painless)</td>
+              <td>1 Visit (60–90 min)</td>
+              <td class="table-price-tag">NPR 10,000 – 22,000</td>
+              <td><a href="/treatments/molar-single-sitting-rct/" class="treatment-action-btn">View →</a></td>
+            </tr>
+
+            <!-- 2. Cosmetic Dentistry -->
+            <tr class="cat-row">
+              <td colspan="5">2. Cosmetic Dentistry & Orthodontics (Fastest-Growing Segment)</td>
+            </tr>
+            <tr>
+              <td>Cosmetic Care</td>
+              <td>Professional Teeth Whitening (In-Clinic / Laser) <span class="table-badge-popular">Top Rated</span></td>
+              <td>1 Visit (45 min)</td>
+              <td class="table-price-tag">NPR 8,000 – 25,000</td>
+              <td><a href="/treatments/teeth-whitening/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Cosmetic Care</td>
+              <td>Home Whitening Kit (Dentist-Supervised Custom Trays)</td>
+              <td>Custom Take-Home</td>
+              <td class="table-price-tag">NPR 8,000 – 19,000</td>
+              <td><a href="/book/?service=Home+Whitening" class="treatment-action-btn">Book →</a></td>
+            </tr>
+            <tr>
+              <td>Cosmetic Care</td>
+              <td>Direct Composite Veneer (per tooth)</td>
+              <td>1 Visit</td>
+              <td class="table-price-tag">NPR 4,000 – 8,000</td>
+              <td><a href="/treatments/dental-veneers/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Cosmetic Care</td>
+              <td>Porcelain / Emax Veneer (per tooth) <span class="table-badge-popular">Hollywood Smile</span></td>
+              <td>2 Visits</td>
+              <td class="table-price-tag">NPR 12,000 – 25,000</td>
+              <td><a href="/treatments/dental-veneers/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Orthodontics</td>
+              <td>Metal Braces (Full Orthodontic Treatment)</td>
+              <td>12–18 Months</td>
+              <td class="table-price-tag">NPR 40,000 – 80,000</td>
+              <td><a href="/treatments/braces/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Orthodontics</td>
+              <td>Ceramic (Tooth-Colored) Aesthetic Braces</td>
+              <td>12–18 Months</td>
+              <td class="table-price-tag">NPR 60,000 – 1,20,000</td>
+              <td><a href="/treatments/braces/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Orthodontics</td>
+              <td>Clear Aligners (Full Invisible Alignment) <span class="table-badge-popular">Trending</span></td>
+              <td>6–15 Months</td>
+              <td class="table-price-tag">NPR 1,20,000 – 3,00,000</td>
+              <td><a href="/treatments/clear-aligners/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Cosmetic Care</td>
+              <td>Gap Closure / Diastema Closure (per tooth gap)</td>
+              <td>1 Visit (45 min)</td>
+              <td class="table-price-tag">NPR 3,500 – 8,000</td>
+              <td><a href="/treatments/gap-closure/" class="treatment-action-btn">View →</a></td>
+            </tr>
+
+            <!-- 3. Restorative Dentistry -->
+            <tr class="cat-row">
+              <td colspan="5">3. Restorative Dentistry & Implants (Restoring Function & Replacing Teeth)</td>
+            </tr>
+            <tr>
+              <td>Restorative</td>
+              <td>Metal Crown (Full Cast Alloy)</td>
+              <td>2 Visits</td>
+              <td class="table-price-tag">NPR 5,000 – 10,000</td>
+              <td><a href="/treatments/dental-crowns/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Restorative</td>
+              <td>PFM (Porcelain Fused to Metal) Crown <span class="table-badge-popular">Standard</span></td>
+              <td>2 Visits</td>
+              <td class="table-price-tag">NPR 6,000 – 15,000</td>
+              <td><a href="/treatments/dental-crowns/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Restorative</td>
+              <td>Zirconia Crown (Monolithic CAD/CAM Metal-Free) <span class="table-badge-popular">Premium</span></td>
+              <td>2 Visits</td>
+              <td class="table-price-tag">NPR 15,000 – 28,000</td>
+              <td><a href="/treatments/dental-crowns/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Restorative</td>
+              <td>Emax Crown (All-Ceramic Aesthetic)</td>
+              <td>2 Visits</td>
+              <td class="table-price-tag">NPR 12,000 – 25,000</td>
+              <td><a href="/treatments/dental-crowns/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Restorative</td>
+              <td>Dental Bridge (3-Unit Fixed Bridge)</td>
+              <td>2 Visits</td>
+              <td class="table-price-tag">NPR 20,000 – 70,000</td>
+              <td><a href="/treatments/dental-bridges/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Prosthodontics</td>
+              <td>Complete Denture (Both Upper & Lower Arches)</td>
+              <td>3–4 Visits</td>
+              <td class="table-price-tag">NPR 20,000 – 50,000</td>
+              <td><a href="/treatments/dentures/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Prosthodontics</td>
+              <td>Removable Partial Denture (RPD)</td>
+              <td>2–3 Visits</td>
+              <td class="table-price-tag">NPR 3,000 – 25,000</td>
+              <td><a href="/treatments/dentures/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Implantology</td>
+              <td>Single Dental Implant (Complete with Abutment & Crown) <span class="table-badge-popular">Permanent</span></td>
+              <td>Staged (2–4 mos)</td>
+              <td class="table-price-tag">NPR 70,000 – 1,50,000+</td>
+              <td><a href="/treatments/dental-implants/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Implantology</td>
+              <td>Premium Swiss/German Implant (Straumann / Nobel Biocare)</td>
+              <td>Staged (2–4 mos)</td>
+              <td class="table-price-tag">NPR 1,20,000 – 2,00,000</td>
+              <td><a href="/treatments/dental-implants/" class="treatment-action-btn">View →</a></td>
+            </tr>
+            <tr>
+              <td>Oral Surgery</td>
+              <td>Bone Graft & Sinus Lift (If Needed for Implants)</td>
+              <td>During Surgery</td>
+              <td class="table-price-tag">NPR 15,000 – 40,000</td>
+              <td><a href="/book/?service=Bone+Graft" class="treatment-action-btn">Book →</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-size:0.875rem; color:var(--text-light); margin-top:1.25rem; text-align:center;">
+        * Note: Prices reflect standard clinic pricing ranges in Kathmandu, Nepal. Final treatment fee depends on the diagnostic assessment, complexity, and chosen restorative material.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       WHY CHOOSE BRIGHTSMILE KATHMANDU
+       ======================================================== -->
   <section class="section">
     <div class="container">
       <div class="section-title-wrap">
-        <span class="section-subtitle">What We Do</span>
-        <h2 class="section-title">Specialized Dental Solutions</h2>
-        <p class="section-description">Select any department below to explore procedure details, transparent NPR pricing, and patient transformations.</p>
+        <span class="section-subtitle">Clinical Excellence</span>
+        <h2 class="section-title">Why Patients Choose BrightSmile Kathmandu</h2>
+        <p class="section-description">
+          Delivering international standards in dental care with transparent Nepal pricing since 2008.
+        </p>
+      </div>
+
+      <div class="why-treatment-grid">
+        <div class="why-treatment-card">
+          <div class="why-icon-box"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <h4>MDS Specialist Dentists</h4>
+          <p>Treatments performed by qualified Prosthodontists, Endodontists, and Oral Surgeons registered with the Nepal Medical Council.</p>
+        </div>
+        <div class="why-treatment-card">
+          <div class="why-icon-box"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h4>Strict 4-Step Sterilization</h4>
+          <p>Class-B autoclave sterilization, disposable barriers, and surgical-grade hygiene for 100% infection prevention.</p>
+        </div>
+        <div class="why-treatment-card">
+          <div class="why-icon-box"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <h4>Modern 3D & Digital Tech</h4>
+          <p>Digital RVG X-rays, rotary endodontics, CAD/CAM zirconia milling, and intraoral cameras for flawless accuracy.</p>
+        </div>
+        <div class="why-treatment-card">
+          <div class="why-icon-box"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M6 3h12l4 6-10 12L2 9z"/></svg></div>
+          <h4>Transparent NPR Pricing</h4>
+          <p>Honest quotes provided in writing with no hidden surgical or material surcharges before any treatment begins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       OUR 4-STEP PATIENT TREATMENT JOURNEY
+       ======================================================== -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Seamless Experience</span>
+        <h2 class="section-title">How Your Treatment Works</h2>
+        <p class="section-description">
+          A calm, transparent, and step-by-step clinical workflow designed around your comfort.
+        </p>
+      </div>
+
+      <div class="journey-grid">
+        <div class="journey-step-card">
+          <span class="journey-step-number">1</span>
+          <h4>Clinical Exam & Digital RVG</h4>
+          <p>We perform a detailed intraoral scan and digital X-ray to diagnose the exact root cause of your dental concern.</p>
+        </div>
+        <div class="journey-step-card">
+          <span class="journey-step-number">2</span>
+          <h4>Custom Plan & Clear Quote</h4>
+          <p>You receive a personalized plan with material options and an exact fixed NPR cost estimate before proceeding.</p>
+        </div>
+        <div class="journey-step-card">
+          <span class="journey-step-number">3</span>
+          <h4>Gentle Precision Treatment</h4>
+          <p>Our specialists execute the procedure under gentle local anesthesia using motorized and ultrasonic technology.</p>
+        </div>
+        <div class="journey-step-card">
+          <span class="journey-step-number">4</span>
+          <h4>Post-Care & Longevity Follow-up</h4>
+          <p>We provide comprehensive aftercare instructions, prescription guidance, and scheduled checkups to protect your smile.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       PATIENT TESTIMONIALS SECTION
+       ======================================================== -->
+  <!-- PATIENT TESTIMONIALS (HOME PAGE GOLD STANDARD) -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="landing-section-header">
+        <span class="section-tag">Patient Stories</span>
+        <h2>What Our Patients Say in Kathmandu</h2>
+        <p>Real feedback from patients who trusted BrightSmile Dental Clinic for comprehensive dental care.</p>
+      </div>
+
+      <!-- Rating Summary Widget -->
+      <div class="rating-summary-container" style="max-width: 820px; margin: 0 auto 3rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem 2rem; box-shadow: var(--shadow-sm); display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+        <div class="rating-platform-box">
+          <div class="rating-platform-logo">
+            <svg viewBox="0 0 24 24" width="32" height="32"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22-.19-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </div>
+          <div class="rating-platform-details">
+            <div class="rating-platform-num-wrap">
+              <span class="rating-num">4.9</span>
+              <div class="rating-stars">★★★★★</div>
+            </div>
+            <span class="rating-count">121+ Google Reviews</span>
+          </div>
+        </div>
+
+        <div class="rating-divider" style="height: 45px;"></div>
+
+        <div class="rating-platform-box">
+          <div class="rating-platform-logo" style="color: var(--primary-color);">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="rating-platform-details">
+            <div class="rating-platform-num-wrap">
+              <span class="rating-num">99.2%</span>
+            </div>
+            <span class="rating-count">Patient Satisfaction Rate</span>
+          </div>
+        </div>
       </div>
 
       <div class="grid-3">
-        <!-- Category 1: General -->
-        <div class="card" style="padding: 2.5rem 2rem;">
-          <div class="card-icon">🩺</div>
-          <h3 class="card-title" style="font-size:1.4rem; color:var(--primary-color);">General Dentistry</h3>
-          <p class="card-text">Preventive treatments to protect your teeth and overall oral health in Kathmandu.</p>
-          <ul class="treatment-menu" style="margin-top: 1rem;">
-            <li class="treatment-menu-item"><a href="/treatments/dental-checkup/">Dental Checkup <span style="font-size:0.8rem; color:var(--primary-color); font-weight:600;">(NPR 1,000) →</span></a></li>
-            <li class="treatment-menu-item"><a href="/treatments/teeth-cleaning/">Teeth Cleaning & Scaling <span style="font-size:0.8rem; color:var(--primary-color); font-weight:600;">(NPR 3,000) →</span></a></li>
-            <li class="treatment-menu-item"><a href="/treatments/dental-fillings/">Tooth Fillings <span style="font-size:0.8rem; color:var(--primary-color); font-weight:600;">(NPR 2,500) →</span></a></li>
-          </ul>
+        <!-- Review 1 -->
+        <div class="test-card">
+          <div class="google-logo">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22-.19-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </div>
+          <div class="test-content">
+            <div class="test-author">
+              <div class="test-avatar">R</div>
+              <div class="test-details">
+                <h4>Ramesh Shrestha</h4>
+                <p>Putalisadak, Kathmandu • Verified Patient</p>
+              </div>
+            </div>
+            <div class="test-rating-line">
+              <div class="test-stars">★★★★★</div>
+              <span class="test-date">Jan 2026</span>
+            </div>
+            <p class="test-text">"Got my root canal and Zirconia crown done here. The single-sitting RCT took only an hour and was completely painless. Dr. Anjana and Dr. Rajesh are true professionals!"</p>
+          </div>
+          <div class="test-tag">Comprehensive Care</div>
         </div>
 
-        <!-- Category 2: Cosmetic -->
-        <div class="card" style="padding: 2.5rem 2rem;">
-          <div class="card-icon">✨</div>
-          <h3 class="card-title" style="font-size:1.4rem; color:var(--primary-color);">Cosmetic Dentistry</h3>
-          <p class="card-text">Esthetic procedures designed to improve the shade, shape, and alignment of your smile.</p>
-          <ul class="treatment-menu" style="margin-top: 1rem;">
-            <li class="treatment-menu-item"><a href="/treatments/teeth-whitening/">Teeth Whitening <span style="font-size:0.8rem; color:var(--primary-color); font-weight:600;">(NPR 10,000) →</span></a></li>
-            <li class="treatment-menu-item"><a href="/treatments/dental-veneers/">Porcelain Veneers <span style="font-size:0.8rem; color:var(--primary-color); font-weight:600;">(NPR 25,000) →</span></a></li>
-            <li class="treatment-menu-item"><a href="/treatments/smile-makeover/">Full Smile Makeover <span style="font-size:0.8rem; color:var(--primary-color); font-weight:600;">(NPR 65,000+) →</span></a></li>
-            <li class="treatment-menu-item"><a href="/treatments/cosmetic-dentistry/">Cosmetic Consultation <span style="font-size:0.8rem; color:var(--primary-color); font-weight:600;">(NPR 15,000+) →</span></a></li>
-          </ul>
+        <!-- Review 2 -->
+        <div class="test-card">
+          <div class="google-logo">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22-.19-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </div>
+          <div class="test-content">
+            <div class="test-author">
+              <div class="test-avatar">P</div>
+              <div class="test-details">
+                <h4>Pooja Karki</h4>
+                <p>Patan, Lalitpur • Verified Patient</p>
+              </div>
+            </div>
+            <div class="test-rating-line">
+              <div class="test-stars">★★★★★</div>
+              <span class="test-date">Dec 2025</span>
+            </div>
+            <p class="test-text">"Had invisible clear aligners for 10 months to correct my crooked front teeth. Dr. Manish Sharma made the journey so smooth. Nobody even noticed I was wearing them!"</p>
+          </div>
+          <div class="test-tag">Comprehensive Care</div>
         </div>
 
-        <!-- Category 3: Restorative -->
-        <div class="card" style="padding: 2.5rem 2rem;">
-          <div class="card-icon">👑</div>
-          <h3 class="card-title" style="font-size:1.4rem; color:var(--primary-color);">Restorative Dentistry</h3>
-          <p class="card-text">Structural treatments to repair damaged teeth and replace missing areas permanently.</p>
-          <ul class="treatment-menu" style="margin-top: 1rem;">
-            <li class="treatment-menu-item"><a href="/treatments/dental-crowns/">Dental Crowns (Zirconia) <span style="font-size:0.8rem; color:var(--primary-color); font-weight:600;">(NPR 12,000) →</span></a></li>
-            <li class="treatment-menu-item"><a href="/treatments/dental-bridges/">Dental Bridges <span style="font-size:0.8rem; color:var(--primary-color); font-weight:600;">(NPR 30,000+) →</span></a></li>
-          </ul>
+        <!-- Review 3 -->
+        <div class="test-card">
+          <div class="google-logo">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22-.19-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </div>
+          <div class="test-content">
+            <div class="test-author">
+              <div class="test-avatar">D</div>
+              <div class="test-details">
+                <h4>Deepak Adhikari</h4>
+                <p>Baneshwor, Kathmandu • Verified Patient</p>
+              </div>
+            </div>
+            <div class="test-rating-line">
+              <div class="test-stars">★★★★★</div>
+              <span class="test-date">Nov 2025</span>
+            </div>
+            <p class="test-text">"Got two Swiss Straumann dental implants placed. Chewing is totally normal and solid now. Transparent pricing with zero hidden lab fees. Highly recommended!"</p>
+          </div>
+          <div class="test-tag">Comprehensive Care</div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="test-card">
+          <div class="google-logo">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22-.19-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </div>
+          <div class="test-content">
+            <div class="test-author">
+              <div class="test-avatar">A</div>
+              <div class="test-details">
+                <h4>Anjali Thapa</h4>
+                <p>Lazimpat, Kathmandu • Verified Patient</p>
+              </div>
+            </div>
+            <div class="test-rating-line">
+              <div class="test-stars">★★★★★</div>
+              <span class="test-date">Oct 2025</span>
+            </div>
+            <p class="test-text">"My in-office laser teeth whitening made my teeth 7 shades whiter in 60 minutes before my wedding. Zero tooth sensitivity and super friendly clinic environment."</p>
+          </div>
+          <div class="test-tag">Comprehensive Care</div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="test-card">
+          <div class="google-logo">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22-.19-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </div>
+          <div class="test-content">
+            <div class="test-author">
+              <div class="test-avatar">N</div>
+              <div class="test-details">
+                <h4>Nabin Karki</h4>
+                <p>Maitidevi, Kathmandu • Verified Patient</p>
+              </div>
+            </div>
+            <div class="test-rating-line">
+              <div class="test-stars">★★★★★</div>
+              <span class="test-date">Sep 2025</span>
+            </div>
+            <p class="test-text">"Extracted my horizontally impacted wisdom tooth with zero pain. The oral surgeon was gentle, and the numbness was 100% effective. Recovered in 3 days!"</p>
+          </div>
+          <div class="test-tag">Comprehensive Care</div>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="test-card">
+          <div class="google-logo">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22-.19-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </div>
+          <div class="test-content">
+            <div class="test-author">
+              <div class="test-avatar">K</div>
+              <div class="test-details">
+                <h4>Kavita Bista</h4>
+                <p>Kirtipur, Kathmandu • Verified Patient</p>
+              </div>
+            </div>
+            <div class="test-rating-line">
+              <div class="test-stars">★★★★★</div>
+              <span class="test-date">Aug 2025</span>
+            </div>
+            <p class="test-text">"The 3D smile design preview showed me exactly how my 6 front E.max veneers would look. The result looks so natural and radiant. World-class dental clinic in Nepal!"</p>
+          </div>
+          <div class="test-tag">Comprehensive Care</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ / Info Section -->
-  <section class="section section-bg">
-    <div class="container faq-accordion">
+  <!-- ========================================================
+       CATEGORIZED FAQ SECTION
+       ======================================================== -->
+  <section class="section" id="faqSection" style="background-color: var(--bg-secondary);">
+    <div class="container faq-container-wrap">
       <div class="section-title-wrap">
-        <span class="section-subtitle">FAQ</span>
-        <h2 class="section-title">General Treatment Questions</h2>
+        <span class="section-subtitle">FAQs &amp; Guides</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-description">
+          Find transparent answers about dental procedures, NPR costs, recovery timelines, and specialist care in Kathmandu.
+        </p>
       </div>
-      <div class="faq-item">
-        <button class="faq-trigger">How often should I visit BrightSmile Dental for a checkup?</button>
-        <div class="faq-answer">
-          <p>We recommend a routine dental examination and professional teeth cleaning every six months to identify early tooth decay and prevent plaque accumulation.</p>
+
+      <!-- FAQ Search Box -->
+      <div class="faq-search-box">
+        <span class="faq-search-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
+        <input type="text" id="faqSearchInput" placeholder="Search treatments (e.g. root canal pain, dental implant cost, braces, wisdom tooth)..." aria-label="Search FAQs">
+      </div>
+
+      <!-- FAQ Category Pills -->
+      <div class="faq-category-pills" id="faqCategoryPills">
+        <button class="faq-cat-btn active" data-filter="all">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8 2.4-7.2-6-4.8h7.6z"/></svg>
+          All Questions
+        </button>
+        <button class="faq-cat-btn" data-filter="general">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.5 2 6 4.5 6 8c0 3 1.5 6 2 9.5.5 3.5 2.5 4.5 4 4.5s3.5-1 4-4.5c.5-3.5 2-6.5 2-9.5 0-3.5-2.5-6-6-6z"/><path d="M9 7c1 1.5 2 2 3 2s2-.5 3-2"/></svg>
+          General &amp; Restorative
+        </button>
+        <button class="faq-cat-btn" data-filter="cosmetic">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="10" y1="3" x2="6" y2="9"/><line x1="14" y1="3" x2="18" y2="9"/><line x1="12" y1="21" x2="6" y2="9"/><line x1="12" y1="21" x2="18" y2="9"/></svg>
+          Whitening &amp; Cosmetic
+        </button>
+        <button class="faq-cat-btn" data-filter="orthodontics">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          Braces &amp; Aligners
+        </button>
+        <button class="faq-cat-btn" data-filter="implants">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="9" y1="11" x2="15" y2="11"/></svg>
+          Implants &amp; Surgery
+        </button>
+        <button class="faq-cat-btn" data-filter="cost">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="8" y2="15"/><line x1="12" y1="15" x2="16" y2="15"/></svg>
+          Costs &amp; Booking
+        </button>
+      </div>
+
+      <!-- FAQ Accordion List -->
+      <div class="faq-accordion" id="faqAccordionList">
+
+        <!-- Category: General & Restorative -->
+        <div class="faq-item" data-faq-category="general">
+          <button class="faq-trigger" id="thFaqGen1">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Preventive Care</span>
+              <span>How often should I get a professional dental cleaning and checkup?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>We recommend visiting every <strong>6 months</strong> for ultrasonic scaling, stain polishing, and diagnostic checkups. Regular hygiene prevents tartar buildup, gingival bleeding, and costly emergency root canals. Learn more on our <a href="/treatments/teeth-cleaning/">Professional Teeth Cleaning</a> page.</p>
+          </div>
         </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-trigger">Are cosmetic dental treatments painful?</button>
-        <div class="faq-answer">
-          <p>Most cosmetic procedures, such as teeth whitening and veneers, are non-invasive or require only minor local anesthesia. We ensure your comfort throughout the session.</p>
+
+        <div class="faq-item" data-faq-category="general">
+          <button class="faq-trigger" id="thFaqGen2">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Root Canal Therapy</span>
+              <span>Is Root Canal Treatment (RCT) painful?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>No, not at all.</strong> With modern computer-controlled local anesthesia and rotary nickel-titanium instruments, RCT is virtually painless. In fact, a root canal immediately relieves severe throbbing dental nerve pain. Read our complete guide on <a href="/treatments/root-canal-treatment/">Root Canal Treatment</a>.</p>
+          </div>
         </div>
+
+        <div class="faq-item" data-faq-category="general">
+          <button class="faq-trigger" id="thFaqGen3">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Endodontics</span>
+              <span>What is Single-Sitting RCT and who is eligible?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>Single-sitting RCT completes canal cleaning, shaping, and hermetic sealing in one single 60 to 90-minute appointment under sterile rubber dam isolation. It is ideal for teeth with acute pulpitis or fractured crowns without extensive active pus drainage. Explore <a href="/treatments/molar-single-sitting-rct/">Single-Sitting Molar RCT</a>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-faq-category="general">
+          <button class="faq-trigger" id="thFaqGen4">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Crowns &amp; Caps</span>
+              <span>What is the difference between Zirconia and PFM dental crowns?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p><a href="/treatments/dental-crowns/">CAD/CAM Zirconia Crowns</a> (NPR 15,000–28,000) are 100% metal-free, biocompatible, extremely durable (1200+ MPa), and mimic natural tooth translucency. <a href="/treatments/pfm-metal-crowns/">PFM Crowns</a> (NPR 6,000–14,000) have a metal alloy core under porcelain, making them an economical choice for back molars.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-faq-category="general">
+          <button class="faq-trigger" id="thFaqGen5">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Fillings &amp; Restorations</span>
+              <span>Why choose tooth-colored composite resin over silver amalgam fillings?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p><a href="/treatments/dental-fillings/">Composite resin fillings</a> chemically bond to enamel, require less healthy tooth removal, contain zero mercury, and match your exact natural tooth shade under LED curing light.</p>
+          </div>
+        </div>
+
+        <!-- Category: Whitening & Cosmetic -->
+        <div class="faq-item" data-faq-category="cosmetic">
+          <button class="faq-trigger" id="thFaqCos1">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Teeth Whitening</span>
+              <span>How many shades whiter will my teeth get with Laser Whitening?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>Our in-office LED laser power bleaching lightens tooth enamel by <strong>6 to 8 shades in a single 45-minute clinical appointment</strong>. Results typically last 12 to 24 months with good hygiene. Discover our <a href="/treatments/teeth-whitening/">Laser Teeth Whitening Packages</a>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-faq-category="cosmetic">
+          <button class="faq-trigger" id="thFaqCos2">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Porcelain Veneers</span>
+              <span>How long do German IPS E.max® porcelain veneers last?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p><a href="/treatments/dental-veneers/">Porcelain Veneers</a> (NPR 12,000–25,000 per tooth) are ultra-thin (0.3–0.5mm) custom ceramic shells permanently bonded to front teeth. They are completely stain-proof against tea, coffee, and curries, lasting 15 to 20+ years.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-faq-category="cosmetic">
+          <button class="faq-trigger" id="thFaqCos3">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Smile Design</span>
+              <span>Can I close a front tooth gap in a single visit?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! With direct composite bonding, midline gaps (diastema) can be closed seamlessly in a single 45-minute painless visit with zero tooth drilling. Learn more on our <a href="/treatments/gap-closure/">Teeth Gap Closure Page</a>.</p>
+          </div>
+        </div>
+
+        <!-- Category: Braces & Aligners -->
+        <div class="faq-item" data-faq-category="orthodontics">
+          <button class="faq-trigger" id="thFaqOrtho1">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Clear Aligners</span>
+              <span>Are Clear Aligners as effective as traditional metal braces?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>Yes, for most mild to moderate crowding, spacing, and bite issues.</strong> <a href="/treatments/clear-aligners/">Clear Aligners</a> (NPR 1,20,000–2,80,000) are virtually invisible, removable for meals, and cause zero wire pokes. Traditional <a href="/treatments/braces/">Metal &amp; Ceramic Braces</a> (NPR 40,000–85,000) remain the gold standard for severe skeletal bite corrections.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-faq-category="orthodontics">
+          <button class="faq-trigger" id="thFaqOrtho2">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Adult Orthodontics</span>
+              <span>Can adults and working professionals get teeth straightening in Kathmandu?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>Absolutely!</strong> Over 50% of our orthodontic patients in Putalisadak are adults. Healthy teeth and gums can be gently moved into perfect alignment at any age with minimal disruption to your professional routine.</p>
+          </div>
+        </div>
+
+        <!-- Category: Implants & Surgery -->
+        <div class="faq-item" data-faq-category="implants">
+          <button class="faq-trigger" id="thFaqImp1">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Dental Implants</span>
+              <span>How long do dental implants last and what is the success rate?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>Dental implants biologically fuse with your jawbone (osseointegration) and boast a clinical success rate above <strong>98%</strong>. With regular brushing, flossing, and 6-month checkups, titanium implants can last <strong>25+ years to a lifetime</strong>. See our <a href="/treatments/dental-implants/">Dental Implants Guide</a>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-faq-category="implants">
+          <button class="faq-trigger" id="thFaqImp2">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Oral Surgery</span>
+              <span>How long is recovery after impacted wisdom tooth surgery?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>Most patients recover comfortably within <strong>2 to 4 days</strong>. Our oral surgeons use atraumatic micro-sectioning to preserve bone, minimizing post-operative swelling and allowing quick resumption of work. Read more on our <a href="/treatments/wisdom-tooth-extraction/">Wisdom Tooth Surgery Page</a>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-faq-category="implants">
+          <button class="faq-trigger" id="thFaqImp3">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Bone Regeneration</span>
+              <span>When is Bone Grafting or a Sinus Lift needed for dental implants?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>When teeth have been missing for months or years, the jawbone naturally shrinks. <a href="/treatments/bone-grafting-sinus-lift/">Bone Grafting &amp; Sinus Lifts</a> rebuild bone volume in upper/lower jaws using Swiss Bio-Oss® biomaterials, providing solid bone foundation for stable implants.</p>
+          </div>
+        </div>
+
+        <!-- Category: Costs & Appointments -->
+        <div class="faq-item" data-faq-category="cost">
+          <button class="faq-trigger" id="thFaqCost1">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Pricing Transparency</span>
+              <span>How much do dental treatments cost in Kathmandu?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>Dental care in Nepal is exceptionally affordable while upholding international clinical standards. Basic scaling starts at NPR 1,500, tooth fillings range from NPR 1,500–6,500, Root Canals (RCT) are NPR 4,500–20,000, and single dental implants start around NPR 70,000. View our full <a href="/pricing/">Clinic Price List</a>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-faq-category="cost">
+          <button class="faq-trigger" id="thFaqCost2">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Payments &amp; EMI</span>
+              <span>What payment options do you accept at the clinic?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>We accept <strong>Cash, Fonepay / eSewa QR transfers, and all major Debit/Credit Cards (Visa, MasterCard, SCT)</strong>. For comprehensive procedures like Orthodontic Braces and Dental Implants, we offer phased payment milestones with zero extra interest.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-faq-category="cost">
+          <button class="faq-trigger" id="thFaqCost3">
+            <div class="faq-trigger-content">
+              <span class="faq-category-badge">Emergency Care</span>
+              <span>Do you accept emergency walk-in dental patients in Putalisadak?</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>Yes!</strong> We provide immediate priority emergency triage for severe toothaches, broken crowns, dental trauma, knocked-out teeth, and facial swelling. Call our emergency helpline directly at <a href="tel:+9779800000000">+977-9800000000</a>.</p>
+          </div>
+        </div>
+
       </div>
+
+      <!-- FAQ Empty State -->
+      <div class="faq-empty-state" id="faqEmptyState">
+        <h4 style="color: var(--text-dark); margin-bottom: 0.5rem;">No matching questions found</h4>
+        <p style="margin-bottom: 1.25rem;">Have a specific dental question not listed here? Contact our Putalisadak clinic team directly.</p>
+        <a href="tel:+9779800000000" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Call Our Clinic (+977-9800000000)</a>
+      </div>
+
     </div>
   </section>
 
-  <!-- CTA Banner -->
+  <!-- ========================================================
+       CTA BANNER
+       ======================================================== -->
   <section class="section container">
     <div class="cta-banner">
-      <h2>Not Sure Which Treatment You Need?</h2>
-      <p>Schedule a detailed clinical diagnostic examination with our dentists today at Putalisadak clinic.</p>
-      <a href="/book/" class="btn btn-dark" id="treatmentsBookCta">Book Consult Appointment</a>
+      <h2>Need Expert Advice on Your Teeth?</h2>
+      <p>Book a diagnostic consultation with our senior dental specialists in Putalisadak, Kathmandu today.</p>
+      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+        <a href="/book/" class="btn btn-dark" id="treatmentsBookCta">Book Appointment Online</a>
+        <a href="tel:+9779800000000" class="btn btn-secondary" style="background:#FFFFFF; color:var(--text-dark);">Call +977-9800000000</a>
+      </div>
     </div>
   </section>
 
   <!-- Footer Section -->
   <footer class="footer">
-    <div class="container footer-grid">
+    <div class="container footer-grid-mega">
       <div class="footer-brand">
         <a href="/" class="logo">
           <img src="/assets/images/favicon-32x32.png" alt="BrightSmile Dental Clinic Logo" class="logo-icon" width="40" height="40">
           <span>Dental in Kathmandu</span>
         </a>
         <p>Your trusted partner for exceptional dental care in Kathmandu. Creating beautiful, healthy smiles since 2008.</p>
+        <div class="social-links">
+          <a href="https://facebook.com" class="social-btn" aria-label="Facebook">F</a>
+          <a href="https://instagram.com" class="social-btn" aria-label="Instagram">I</a>
+          <a href="https://tiktok.com" class="social-btn" aria-label="TikTok">T</a>
+          <a href="https://youtube.com" class="social-btn" aria-label="YouTube">Y</a>
+        </div>
       </div>
+
+      <!-- Quick Links -->
       <div class="footer-col">
         <h3>Quick Links</h3>
         <ul class="footer-links">
           <li><a href="/">Home</a></li>
           <li><a href="/about/">About Us</a></li>
-          <li><a href="/treatments/">Treatments</a></li>
-          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/treatments/">All Treatments (22)</a></li>
+          <li><a href="/doctors/">Our Doctors</a></li>
+          <li><a href="/pricing/">Pricing &amp; Fees</a></li>
+          <li><a href="/gallery/">Smile Gallery</a></li>
+          <li><a href="/blog/">Dental Blog</a></li>
           <li><a href="/contact/">Contact Us</a></li>
         </ul>
       </div>
+
+      <!-- Category 1: General & Restorative -->
       <div class="footer-col">
-        <h3>Treatments</h3>
+        <h3>General &amp; Restorative</h3>
         <ul class="footer-links">
-          <li><a href="/treatments/teeth-whitening/">Teeth Whitening</a></li>
-          <li><a href="/treatments/dental-veneers/">Dental Veneers</a></li>
           <li><a href="/treatments/teeth-cleaning/">Teeth Cleaning</a></li>
-          <li><a href="/treatments/dental-fillings/">Dental Fillings</a></li>
-          <li><a href="/treatments/dental-crowns/">Dental Crowns</a></li>
-          <li><a href="/treatments/dental-bridges/">Dental Bridges</a></li>
+          <li><a href="/treatments/scaling-and-polishing/">Scaling &amp; Polishing</a></li>
+          <li><a href="/treatments/dental-checkup/">Dental Checkup</a></li>
+          <li><a href="/treatments/dental-fillings/">Composite Fillings</a></li>
+          <li><a href="/treatments/gic-filling/">GIC Fluoride Filling</a></li>
+          <li><a href="/treatments/root-canal-treatment/">Root Canal (RCT)</a></li>
+          <li><a href="/treatments/molar-single-sitting-rct/">Single-Sitting Molar RCT</a></li>
         </ul>
       </div>
+
+      <!-- Category 2: Cosmetic & Orthodontics -->
+      <div class="footer-col">
+        <h3>Cosmetic &amp; Ortho</h3>
+        <ul class="footer-links">
+          <li><a href="/treatments/teeth-whitening/">Laser Teeth Whitening</a></li>
+          <li><a href="/treatments/dental-veneers/">Porcelain E.max Veneers</a></li>
+          <li><a href="/treatments/smile-makeover/">Smile Makeover</a></li>
+          <li><a href="/treatments/clear-aligners/">Clear Aligners</a></li>
+          <li><a href="/treatments/braces/">Orthodontic Braces</a></li>
+          <li><a href="/treatments/gap-closure/">Teeth Gap Closure</a></li>
+          <li><a href="/treatments/cosmetic-dentistry/">Cosmetic Dentistry</a></li>
+        </ul>
+      </div>
+
+      <!-- Category 3: Implants & Surgery -->
+      <div class="footer-col">
+        <h3>Implants &amp; Surgery</h3>
+        <ul class="footer-links">
+          <li><a href="/treatments/dental-implants/">Dental Implants</a></li>
+          <li><a href="/treatments/dental-crowns/">Zirconia Crowns</a></li>
+          <li><a href="/treatments/pfm-metal-crowns/">PFM &amp; Metal Crowns</a></li>
+          <li><a href="/treatments/dental-bridges/">Fixed Dental Bridges</a></li>
+          <li><a href="/treatments/dentures/">Dentures (Full/Partial)</a></li>
+          <li><a href="/treatments/wisdom-tooth-extraction/">Wisdom Tooth Surgery</a></li>
+          <li><a href="/treatments/tooth-extraction/">Simple Tooth Extraction</a></li>
+          <li><a href="/treatments/bone-grafting-sinus-lift/">Bone Graft &amp; Sinus Lift</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Details -->
       <div class="footer-col">
         <h3>Contact Details</h3>
-        <p>Putalisadak, Kathmandu, Nepal<br>Phone: <a href="tel:+9779800000000">+977-9800000000</a></p>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item">
+            <span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: block; margin-top: 0.1rem;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </span> 
+            Putalisadak, Opposite Kumari Bank, Kathmandu
+          </li>
+          <li class="footer-contact-item">
+            <span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: block; margin-top: 0.1rem;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </span> 
+            <a href="tel:+9779800000000" style="color: var(--text-muted);">+977-9800000000</a>
+          </li>
+          <li class="footer-contact-item">
+            <span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: block; margin-top: 0.1rem;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </span> 
+            <a href="mailto:info@brightsmiledental.com" style="color: var(--text-muted);">info@brightsmiledental.com</a>
+          </li>
+        </ul>
+        <div style="margin-top: 1.5rem;">
+          <a href="/book/" class="btn btn-primary" id="footerCtaBtn" style="width: 100%; font-size: 0.9rem; padding: 0.75rem 1rem;">Book Appointment</a>
+        </div>
       </div>
     </div>
     <div class="container footer-bottom">
       <p>&copy; 2026 Dental in Kathmandu. All rights reserved.</p>
+      <div style="display:flex; gap:1.5rem;">
+        <a href="#" style="color:var(--text-muted);">Privacy Policy</a>
+        <a href="#" style="color:var(--text-muted);">Terms of Service</a>
+      </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="../assets/js/main.js"></script>
+  <script>
+    // Live Interactive Category Filter & Real-Time Search for Treatments Page
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('treatmentSearchInput');
+      const filterPills = document.querySelectorAll('.filter-pill');
+      const treatmentCards = document.querySelectorAll('.treatment-card-pro');
+      const categoryBlocks = document.querySelectorAll('.category-block');
+
+      let currentCategory = 'all';
+      let currentQuery = '';
+
+      function filterTreatments() {
+        const query = currentQuery.trim().toLowerCase();
+
+        categoryBlocks.forEach(block => {
+          const sectionCategory = block.getAttribute('data-section-category');
+          let visibleCardsInSection = 0;
+
+          const cards = block.querySelectorAll('.treatment-card-pro');
+          cards.forEach(card => {
+            const tags = (card.getAttribute('data-treatment-tags') || '').toLowerCase();
+            const textContent = card.innerText.toLowerCase();
+
+            const matchesCategory = (currentCategory === 'all') || (currentCategory === sectionCategory);
+            
+            const matchesQuery = query === '' || tags.includes(query) || textContent.includes(query);
+
+            if (matchesCategory && matchesQuery) {
+              card.style.display = 'flex';
+              visibleCardsInSection++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          // Show or hide the whole category section if no cards match
+          if (visibleCardsInSection > 0) {
+            block.style.display = 'block';
+          } else {
+            block.style.display = 'none';
+          }
+        });
+      }
+
+      // Filter Pill Click Handler
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          filterPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          currentCategory = pill.getAttribute('data-category');
+          filterTreatments();
+        });
+      });
+
+      // Search Input Handler
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentQuery = e.target.value;
+          filterTreatments();
+        });
+      }
+    });
+  </script>
 </body>
 </html>

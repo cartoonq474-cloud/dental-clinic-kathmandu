@@ -1,6 +1,5 @@
 {
+  "outputDirectory": "public_html",
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/public_html/$1" }
-  ]
+  "trailingSlash": true
 }

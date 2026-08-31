@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "npx -y live-server public_html --port=3000 --watch=public_html",
     "start": "npx -y live-server public_html --port=3000 --watch=public_html",
-    "serve": "npx -y serve public_html -l 3000",
-    "build": "echo \"Static site ready in public_html/\""
+    "serve": "npx -y serve public_html -l 3000"
   },
   "keywords": [
     "dental",

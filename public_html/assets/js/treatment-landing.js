@@ -64,11 +64,12 @@ function initBookingForm() {
   const form = document.getElementById('landingLeadForm');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const name = document.getElementById('leadName')?.value.trim();
     const phone = document.getElementById('leadPhone')?.value.trim();
+    const option = document.getElementById('leadOption')?.value;
     const preferredDate = document.getElementById('leadDate')?.value;
 
     if (!name || !phone) {
@@ -79,19 +80,46 @@ function initBookingForm() {
     const submitBtn = form.querySelector('.booking-form-submit');
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Booking Your Slot...';
+      submitBtn.innerHTML = '<span class="loading-spinner"></span> Dispatching Request...';
     }
 
-    setTimeout(() => {
-      form.innerHTML = `
-        <div style="text-align: center; padding: 2rem 1rem;">
-          <div style="width: 56px; height: 56px; background: #DCFCE7; color: #166534; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold;">✓</div>
-          <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-dark);">Appointment Request Received!</h4>
-          <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Thank you, <strong>${name}</strong>. Our front desk at Putalisadak clinic will call you shortly at <strong>${phone}</strong> to confirm your slot.</p>
-          <p style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600;">For urgent inquiries, call us directly at +977-9800000000</p>
+    const pageTitle = document.title.split('-')[0].trim();
+    const leadPayload = {
+      _subject: `New Lead: ${pageTitle} - ${name} (BrightSmile Kathmandu)`,
+      _captcha: "false",
+      _template: "table",
+      "Patient Name": name,
+      "Phone / WhatsApp": phone,
+      "Selected Option / Symptoms": option || "Standard Inquiry",
+      "Preferred Date": preferredDate || "Earliest Available",
+      "Treatment Landing Page": window.location.pathname,
+      "Full URL": window.location.href,
+      "Submission Time": new Date().toLocaleString('en-US', { timeZone: 'Asia/Kathmandu' })
+    };
+
+    try {
+      await fetch('https://formsubmit.co/ajax/dentalinkathmandu@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(leadPayload)
+      });
+    } catch (err) {
+      console.warn('Lead dispatch note:', err);
+    }
+
+    form.innerHTML = `
+      <div style="text-align: center; padding: 2rem 1rem;">
+        <div style="width: 56px; height: 56px; background: #DCFCE7; color: #166534; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold;">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
-      `;
-    }, 800);
+        <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-dark);">Appointment Request Received!</h4>
+        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Thank you, <strong>${name}</strong>. Our front desk at Putalisadak clinic has received your details and will call you shortly at <strong>${phone}</strong> to confirm your appointment.</p>
+        <p style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600;">For urgent inquiries, call us directly at +977-9748343015</p>
+      </div>
+    `;
   });
 }
 

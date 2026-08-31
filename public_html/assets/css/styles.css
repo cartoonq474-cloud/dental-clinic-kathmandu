@@ -54,6 +54,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  background-color: var(--bg-dark);
+  min-height: 100%;
 }
 
 body {
@@ -62,6 +64,10 @@ body {
   background-color: var(--bg-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -246,13 +252,23 @@ button {
 
 /* Header & Navigation */
 .header {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.96);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
-  transition: var(--transition-normal);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.header.header-scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  border-bottom-color: rgba(226, 232, 240, 0.8);
 }
 
 .nav-bar {
@@ -1486,11 +1502,14 @@ textarea.form-control {
 
 /* Footer Section */
 .footer {
+  margin-top: auto;
   background-color: var(--bg-dark);
   color: #F8FAFC;
   padding-top: 5rem;
   padding-bottom: 2.5rem;
   border-top: 4px solid var(--primary-color);
+  position: relative;
+  box-shadow: 0 100vh 0 100vh var(--bg-dark);
 }
 
 .footer-grid {
@@ -1595,6 +1614,10 @@ textarea.form-control {
   gap: 1rem;
   color: var(--text-muted);
   font-size: 0.85rem;
+}
+
+.footer-bottom p {
+  margin-bottom: 0;
 }
 
 @media (max-width: 1200px) {
@@ -2303,16 +2326,21 @@ body.modal-open {
 
 .advice-check-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-dark);
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .advice-check-icon {
   color: #00B67A;
   font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1.3;
 }
 
 @media (max-width: 991px) {
@@ -2322,12 +2350,52 @@ body.modal-open {
   .advice-banner {
     grid-template-columns: 1fr;
     gap: 2rem;
+    padding: 2.5rem 2rem;
+  }
+  .advice-checklist {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 }
 
 @media (max-width: 768px) {
-  .outcome-grid {
+  .problem-grid {
     grid-template-columns: 1fr;
+  }
+  .advice-banner {
+    padding: 2rem 1.25rem;
+    gap: 1.5rem;
+    border-radius: var(--radius-md);
+  }
+  .advice-content h4 {
+    font-size: 0.95rem;
+    line-height: 1.35;
+    margin-bottom: 0.35rem;
+  }
+  .advice-content h3 {
+    font-size: 1.45rem;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+  }
+  .advice-content p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+  }
+  .advice-check-item {
+    font-size: 0.9rem;
+  }
+  .problem-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .advice-banner {
+    padding: 1.5rem 1rem;
+  }
+  .advice-content h3 {
+    font-size: 1.35rem;
   }
 }
 
@@ -2521,16 +2589,21 @@ body.modal-open {
 
 .family-check-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-dark);
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .family-check-icon {
   color: #00B67A;
   font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1.3;
 }
 
 @media (max-width: 991px) {
@@ -2540,8 +2613,46 @@ body.modal-open {
   }
   .family-banner {
     grid-template-columns: 1fr;
-    gap: 3rem;
-    padding: 3rem;
+    gap: 2.5rem;
+    padding: 2.5rem 2rem;
+  }
+  .family-checklist {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .family-banner {
+    padding: 2rem 1.25rem;
+    gap: 1.5rem;
+    border-radius: var(--radius-md);
+  }
+  .family-banner h3 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin-bottom: 0.85rem;
+  }
+  .family-banner p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+  .family-check-item {
+    font-size: 0.9rem;
+  }
+  .age-group-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .family-banner {
+    padding: 1.5rem 1rem;
+  }
+  .family-banner h3 {
+    font-size: 1.35rem;
   }
 }
 
@@ -2662,16 +2773,21 @@ body.modal-open {
 
 .tech-benefit-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-dark);
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .tech-benefit-icon {
   color: #00B67A;
   font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1.3;
 }
 
 .tech-experience-box {
@@ -2705,7 +2821,42 @@ body.modal-open {
   .tech-benefits-banner {
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    padding: 2.5rem;
+    padding: 2.5rem 2rem;
+  }
+  .tech-benefits-checklist {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-benefits-banner {
+    padding: 2rem 1.25rem;
+    gap: 1.5rem;
+    border-radius: var(--radius-md);
+  }
+  .tech-benefits-title {
+    font-size: 1.45rem;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  .tech-benefit-item {
+    font-size: 0.9rem;
+  }
+  .tech-experience-box {
+    padding: 1.5rem 1.25rem;
+  }
+  .tech-category-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .tech-benefits-banner {
+    padding: 1.5rem 1rem;
+  }
+  .tech-benefits-title {
+    font-size: 1.35rem;
   }
 }
 
@@ -2839,16 +2990,41 @@ body.modal-open {
 
 .outcome-banner-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-dark);
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .outcome-banner-icon {
   color: #00B67A;
   font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+.outcome-banner-action {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.outcome-cta-btn {
+  font-size: 1.05rem;
+  padding: 1.1rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-md);
+  white-space: normal;
+  text-align: center;
 }
 
 @media (max-width: 991px) {
@@ -2857,14 +3033,49 @@ body.modal-open {
   }
   .outcome-banner {
     grid-template-columns: 1fr;
-    gap: 3rem;
-    padding: 3rem;
+    gap: 2.5rem;
+    padding: 2.5rem 2rem;
+  }
+  .outcome-banner-checklist {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .outcome-grid {
     grid-template-columns: 1fr;
+  }
+  .outcome-banner {
+    padding: 2rem 1.25rem;
+    gap: 1.75rem;
+    border-radius: var(--radius-md);
+  }
+  .outcome-banner-title {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin-bottom: 0.85rem;
+  }
+  .outcome-banner-text {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+  .outcome-banner-item {
+    font-size: 0.9rem;
+  }
+  .outcome-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .outcome-banner {
+    padding: 1.5rem 1rem;
+  }
+  .outcome-banner-title {
+    font-size: 1.35rem;
   }
 }
 
@@ -3887,3 +4098,447 @@ body.modal-open {
     align-items: stretch;
   }
 }
+
+/* ==========================================================================
+   UNIVERSAL MOBILE RESPONSIVENESS & TOUCH UX ENGINE
+   ========================================================================== */
+
+/* 1. Global Viewport & Prevention of Horizontal Scrolling */
+html, body {
+  overflow-x: clip;
+  max-width: 100vw;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video, iframe, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent iOS Safari 16px font auto-zoom bug on focus */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="date"],
+  input[type="password"],
+  input[type="search"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* 2. Mobile Header, Navigation Drawer & Touch-Friendly Overlay */
+@media (max-width: 1024px) {
+  .header {
+    height: 70px;
+  }
+
+  .nav-bar {
+    height: 100%;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: var(--bg-primary);
+    padding: 1.5rem 1.75rem 3.5rem;
+    gap: 1.25rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+  }
+
+  .nav-menu .nav-link {
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 0.6rem 0;
+    display: block;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .nav-dropdown .dropdown-menu {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--primary-light);
+    gap: 0.85rem;
+  }
+
+  .mobile-nav-toggle {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    font-size: 1.35rem;
+    cursor: pointer;
+  }
+}
+
+/* 3. Hero Sections on Tablets and Mobile Devices */
+@media (max-width: 991px) {
+  .hero {
+    padding: 4.5rem 0 4rem;
+  }
+
+  .page-hero {
+    padding: 4rem 0 3rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.15rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+
+  .stat-item h3 {
+    font-size: 1.5rem;
+  }
+
+  .stat-item p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* 4. Filter Bars & Horizontal Swipeable Navigation */
+@media (max-width: 768px) {
+  .treatment-filter-bar {
+    padding: 1rem;
+  }
+
+  .treatment-filter-pills {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin: 0 -0.5rem;
+    padding: 0 0.5rem 0.5rem;
+  }
+
+  .treatment-filter-pills::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .treatment-filter-pills::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+  }
+
+  .filter-pill {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    padding: 0.55rem 1rem;
+  }
+
+  .faq-tab-group {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .faq-tab-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    padding: 0.55rem 1rem;
+  }
+}
+
+/* 5. Responsive Grid Fallbacks on Small Screens */
+@media (max-width: 768px) {
+  .service-areas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .trust-flex {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .category-heading-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .treatment-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .treatment-action-btn {
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta-banner {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+
+  .cta-banner h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-banner .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-flex {
+    grid-template-columns: 1fr;
+  }
+
+  .service-areas-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 6. Touch-Friendly Booking Modals on Mobile */
+@media (max-width: 600px) {
+  .booking-modal-content {
+    width: 95%;
+    max-height: 92vh;
+    padding: 1.25rem 1rem;
+    margin: 1rem auto;
+    border-radius: var(--radius-md);
+  }
+
+  .booking-modal-header h3 {
+    font-size: 1.15rem;
+  }
+
+  .booking-modal-body {
+    padding: 1rem 0 0.5rem;
+  }
+}
+
+/* 7. Tables Responsive Scrolling */
+.table-responsive, .pricing-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+}
+
+.table-responsive table {
+  min-width: 550px;
+}
+
+/* 8. Footer Mobile Accordion-Style Stacking */
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 3.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-grid-mega {
+    gap: 2rem;
+  }
+
+  .footer-col h3 {
+    margin-bottom: 0.85rem;
+    font-size: 1.05rem;
+  }
+
+  .footer-links {
+    gap: 0.6rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}
+
+/* 9. Home Page Specific Mobile Component Optimizations */
+@media (max-width: 991px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  #aboutPreview .grid-2,
+  #partnerOralHealth .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-image-wrap {
+    max-width: 480px;
+    margin: 1.5rem auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-category-pills {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding: 0 0.5rem 0.5rem;
+    margin: 0 -0.5rem 1.75rem;
+    gap: 0.4rem;
+  }
+
+  .faq-category-pills::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .faq-category-pills::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+  }
+
+  .faq-cat-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    padding: 0.45rem 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .rating-summary-container {
+    margin-bottom: 2rem;
+  }
+
+  .rating-platforms-wrap {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .rating-divider {
+    display: none;
+  }
+
+  .rating-platform-box {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rating-tabs-wrap {
+    width: 100%;
+    display: flex;
+  }
+
+  .rating-tab-btn {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 0.6rem 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .test-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .ba-slider {
+    aspect-ratio: 16 / 11;
+  }
+
+  .emergency-banner {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+

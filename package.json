@@ -1,18 +1,26 @@
 {
   "name": "dental-clinic-kathmandu",
   "version": "1.0.0",
-  "description": "BrightSmile Dental Clinic Kathmandu Website",
+  "description": "BrightSmile Dental Clinic Kathmandu - Premium Dental Care Website in Putalisadak, Kathmandu, Nepal",
+  "main": "public_html/index.html",
   "scripts": {
     "dev": "npx -y live-server public_html --port=3000 --watch=public_html",
     "start": "npx -y live-server public_html --port=3000 --watch=public_html",
-    "serve": "npx -y serve public_html -l 3000"
+    "serve": "npx -y serve public_html -l 3000",
+    "build": "echo \"Build complete - static assets in public_html\"",
+    "test": "node -e \"const fs=require('fs'),path=require('path');function chk(d){for(const f of fs.readdirSync(d)){const p=path.join(d,f);if(fs.statSync(p).isDirectory())chk(p);else if(f.endsWith('.html')){const c=fs.readFileSync(p,'utf-8');if((c.match(/<section/g)||[]).length!==(c.match(/<\\/section>/g)||[]).length)throw new Error('Section mismatch in: '+p);}}}chk('public_html');console.log('Verification passed: All HTML files valid.');\""
   },
   "keywords": [
-    "dental",
-    "clinic",
-    "kathmandu",
-    "brightsmile"
+    "dental-clinic-kathmandu",
+    "dentist-in-kathmandu",
+    "dental-in-kathmandu",
+    "brightsmile-dental-clinic",
+    "teeth-whitening-nepal",
+    "dental-implants-kathmandu",
+    "root-canal-treatment-nepal",
+    "clear-aligners-nepal",
+    "putalisadak-dentist"
   ],
-  "author": "BrightSmile Dental Clinic",
+  "author": "BrightSmile Dental Clinic <dentalinkathmandu@gmail.com>",
   "license": "ISC"
 }

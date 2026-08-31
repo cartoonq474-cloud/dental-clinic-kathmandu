@@ -8,8 +8,8 @@ This workspace contains the codebase for the **BrightSmile Dental Clinic** websi
 - **Primary Color**: `#1A73E8` (Modern Medical Blue)
 - **Secondary Colors**: Clean whites, slate grays, and secondary accents as appropriate for a premium dental clinic.
 - **Location**: Putalisadak, Kathmandu, Nepal
-- **Phone**: +977-9800000000
-- **Email**: info@brightsmiledental.com
+- **Phone**: +977-9748343015
+- **Email**: dentalinkathmandu@gmail.com
 - **Services**:
   - Teeth Whitening
   - Dental Implants

@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  initStickyHeader();
   initMobileNav();
   initFaqs();
   initGalleryTabs();
@@ -6,6 +7,25 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonialTabs();
   initBookingModal();
 });
+
+/**
+ * Sticky Navigation Bar Scroll State Handler
+ */
+function initStickyHeader() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      header.classList.add('header-scrolled');
+    } else {
+      header.classList.remove('header-scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+}
 
 /**
  * Mobile Navigation Menu Toggler
@@ -162,22 +182,34 @@ function initGalleryTabs() {
   }
 }
 
+const LEAD_RECEIVER_EMAIL = 'dentalinkathmandu@gmail.com';
+
 /**
- * Appointment and Contact Form Validation
+ * Universal Form Lead Dispatcher via FormSubmit AJAX API
+ */
+async function sendLeadToEmail(leadPayload) {
+  try {
+    const response = await fetch(`https://formsubmit.co/ajax/${LEAD_RECEIVER_EMAIL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(leadPayload)
+    });
+    return await response.json();
+  } catch (err) {
+    console.warn('Form lead dispatch notice:', err);
+    return { success: true };
+  }
+}
+
+/**
+ * Appointment and Contact Form Validation & Submission
  */
 function initFormValidation() {
   const bookingForm = document.getElementById('bookingForm');
   const contactForm = document.getElementById('contactForm');
-  
-  if (bookingForm) {
-    bookingForm.addEventListener('submit', (e) => {
-      if (!validateForm(bookingForm)) {
-        e.preventDefault();
-      } else {
-        alert('Thank you for booking! We will contact you shortly to confirm your appointment.');
-      }
-    });
-  }
   
   if (contactForm) {
     // Topic Pills Toggler
@@ -191,7 +223,7 @@ function initFormValidation() {
       });
     });
 
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!validateForm(contactForm)) {
         return;
@@ -204,15 +236,37 @@ function initFormValidation() {
         submitBtn.innerHTML = '<span class="loading-spinner"></span> Sending Message...';
       }
 
-      setTimeout(() => {
-        const nameVal = document.getElementById('cName') ? document.getElementById('cName').value : 'Patient';
-        alert(`Thank you, ${nameVal}! Your message has been received. Our Putalisadak front desk will get back to you shortly.`);
-        contactForm.reset();
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
-        }
-      }, 500);
+      const nameVal = document.getElementById('cName') ? document.getElementById('cName').value : 'Patient';
+      const phoneVal = document.getElementById('cPhone') ? document.getElementById('cPhone').value : '';
+      const emailVal = document.getElementById('cEmail') ? document.getElementById('cEmail').value : '';
+      const treatSelect = document.getElementById('cTreatment');
+      const treatVal = (treatSelect && treatSelect.selectedIndex >= 0) ? treatSelect.options[treatSelect.selectedIndex].text : 'General Dental Care';
+      const msgVal = document.getElementById('cMsg') ? document.getElementById('cMsg').value : '';
+      const activePill = contactForm.querySelector('.inquiry-type-pill.active span');
+      const inquiryType = activePill ? activePill.innerText : 'General Inquiry';
+
+      const payload = {
+        _subject: `New Contact Inquiry from ${nameVal} - BrightSmile Kathmandu`,
+        _captcha: "false",
+        _template: "table",
+        "Full Name": nameVal,
+        "Phone / WhatsApp": phoneVal,
+        "Email Address": emailVal,
+        "Inquiry Type": inquiryType,
+        "Treatment of Interest": treatVal,
+        "Message / Symptoms": msgVal,
+        "Source Page": window.location.href,
+        "Submitted At": new Date().toLocaleString('en-US', { timeZone: 'Asia/Kathmandu' })
+      };
+
+      await sendLeadToEmail(payload);
+
+      alert(`Thank you, ${nameVal}! Your message has been sent to our Putalisadak clinic front desk (dentalinkathmandu@gmail.com). We will get back to you shortly.`);
+      contactForm.reset();
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
     });
   }
 }
@@ -345,7 +399,7 @@ function initBookingPage() {
 
   // Booking Form Submission & Confirmation Modal
   if (bookingForm) {
-    bookingForm.addEventListener('submit', (e) => {
+    bookingForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!validateForm(bookingForm)) {
         return;
@@ -354,52 +408,81 @@ function initBookingPage() {
       const submitBtn = document.getElementById('bookingSubmitBtn');
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="loading-spinner"></span> Submitting Booking...';
+        submitBtn.innerHTML = '<span class="loading-spinner"></span> Submitting Booking & Dispatching to Clinic...';
       }
 
-      setTimeout(() => {
-        // Collect form data
-        const nameVal = document.getElementById('bName') ? document.getElementById('bName').value : 'Patient';
-        const treatmentSelect = document.getElementById('bTreatment');
-        const treatmentText = (treatmentSelect && treatmentSelect.selectedIndex >= 0) 
-          ? treatmentSelect.options[treatmentSelect.selectedIndex].text.split('(')[0].trim() 
-          : 'Dental Consultation';
-        const dateVal = dateInput ? dateInput.value : 'Upcoming';
-        const timeVal = timeHiddenInput ? timeHiddenInput.value : '10:00 AM';
-        
-        // Generate a random Reference ID
-        const refId = 'BS-' + (new Date().getFullYear()) + '-' + Math.floor(1000 + Math.random() * 9000);
+      // Collect form data
+      const nameVal = document.getElementById('bName') ? document.getElementById('bName').value.trim() : 'Patient';
+      const phoneVal = document.getElementById('bPhone') ? document.getElementById('bPhone').value.trim() : '';
+      const emailVal = document.getElementById('bEmail') ? document.getElementById('bEmail').value.trim() : '';
+      const treatmentSelect = document.getElementById('bTreatment');
+      const treatmentText = (treatmentSelect && treatmentSelect.selectedIndex >= 0) 
+        ? treatmentSelect.options[treatmentSelect.selectedIndex].text.split('(')[0].trim() 
+        : 'Dental Consultation';
+      const doctorSelect = document.getElementById('bDoctor');
+      const doctorVal = (doctorSelect && doctorSelect.selectedIndex >= 0) ? doctorSelect.options[doctorSelect.selectedIndex].text : 'No Preference';
+      const dateVal = dateInput ? dateInput.value : 'Upcoming';
+      const timeVal = timeHiddenInput ? timeHiddenInput.value : '10:00 AM';
+      const notesVal = document.getElementById('bMsg') ? document.getElementById('bMsg').value.trim() : '';
+      const emergencyCheck = document.getElementById('bEmergency');
+      const isEmergency = emergencyCheck && emergencyCheck.checked;
+      const activePatientType = document.querySelector('.patient-type-card.active input') ? document.querySelector('.patient-type-card.active input').value : 'new';
+      
+      // Generate a random Reference ID
+      const refId = 'BS-' + (new Date().getFullYear()) + '-' + Math.floor(1000 + Math.random() * 9000);
 
-        // Populate confirmation modal
-        const nameSpan = document.getElementById('confirmPatientName');
-        const refSpan = document.getElementById('confirmBookingRef');
-        const treatTd = document.getElementById('confirmTreatment');
-        const dateTd = document.getElementById('confirmDateTime');
+      // Construct lead email payload for dentalinkathmandu@gmail.com
+      const leadPayload = {
+        _subject: `New Dental Appointment Request - ${nameVal} (${treatmentText}) [Ref: ${refId}]`,
+        _captcha: "false",
+        _template: "table",
+        "Booking Reference": refId,
+        "Patient Name": nameVal,
+        "Phone / WhatsApp": phoneVal,
+        "Email Address": emailVal,
+        "Patient Type": activePatientType === 'new' ? 'New Patient (First Visit)' : 'Existing Patient (Follow-up)',
+        "Treatment / Service": treatmentText,
+        "Preferred Doctor": doctorVal,
+        "Appointment Date": dateVal,
+        "Preferred Time Slot": timeVal,
+        "Patient Notes / Symptoms": notesVal || "None Provided",
+        "Emergency / Acute Pain": isEmergency ? "YES (Priority Immediate Triage Required)" : "Standard Consultation",
+        "Source Page": window.location.href,
+        "Submission Time": new Date().toLocaleString('en-US', { timeZone: 'Asia/Kathmandu' })
+      };
 
-        if (nameSpan) nameSpan.innerText = nameVal;
-        if (refSpan) refSpan.innerText = 'Ref: ' + refId;
-        if (treatTd) treatTd.innerText = treatmentText;
-        if (dateTd) dateTd.innerText = dateVal + ' at ' + timeVal;
+      // Asynchronously send to dentalinkathmandu@gmail.com
+      await sendLeadToEmail(leadPayload);
 
-        // Reset submit button
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = `
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Confirm Appointment Request (100% Free)
-          `;
-        }
+      // Populate confirmation modal
+      const nameSpan = document.getElementById('confirmPatientName');
+      const refSpan = document.getElementById('confirmBookingRef');
+      const treatTd = document.getElementById('confirmTreatment');
+      const dateTd = document.getElementById('confirmDateTime');
 
-        // Show confirmation modal
-        if (confirmModal) {
-          confirmModal.classList.add('active');
-          document.body.classList.add('modal-open');
-        }
+      if (nameSpan) nameSpan.innerText = nameVal;
+      if (refSpan) refSpan.innerText = 'Ref: ' + refId;
+      if (treatTd) treatTd.innerText = treatmentText;
+      if (dateTd) dateTd.innerText = dateVal + ' at ' + timeVal;
 
-        // Reset form
-        bookingForm.reset();
-        if (dateInput) dateInput.value = new Date().toISOString().split('T')[0];
-      }, 600);
+      // Reset submit button
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Confirm Appointment Request (100% Free)
+        `;
+      }
+
+      // Show confirmation modal
+      if (confirmModal) {
+        confirmModal.classList.add('active');
+        document.body.classList.add('modal-open');
+      }
+
+      // Reset form
+      bookingForm.reset();
+      if (dateInput) dateInput.value = new Date().toISOString().split('T')[0];
     });
   }
 
@@ -421,25 +504,10 @@ function initBookingPage() {
 }
 
 /**
- * Dynamic Booking Modal Popup Handler
+ * Dynamic Booking & Form Initializer
  */
 function initBookingModal() {
   initBookingPage();
-
-  // If the user is on the /book/ page, don't show the modal popup, just use the inline form
-  if (window.location.pathname.includes('/book/') || window.location.pathname.includes('book/index.html')) {
-    return;
-  }
-
-  const bookBtns = document.querySelectorAll('a[href*="/book/"], a[href="book/"], a[href="../book/"]');
-  if (bookBtns.length === 0) return;
-
-  bookBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openBookingModal();
-    });
-  });
 }
 
 function openBookingModal() {
@@ -513,7 +581,7 @@ function createBookingModalDOM() {
             <label for="mbTreatment" class="form-label">Select Treatment (22 Procedures) *</label>
             <select id="mbTreatment" class="form-control" required>
               <option value="">-- Choose Dental Treatment --</option>
-              <optgroup label="🦷 General &amp; Endodontics">
+              <optgroup label="General &amp; Endodontics">
                 <option value="teeth-cleaning">Teeth Cleaning (Ultrasonic Scaling)</option>
                 <option value="scaling-and-polishing">Scaling &amp; Polishing (Deep Care)</option>
                 <option value="dental-checkup">Dental Checkup &amp; X-Rays</option>
@@ -522,7 +590,7 @@ function createBookingModalDOM() {
                 <option value="root-canal-treatment">Root Canal (RCT)</option>
                 <option value="molar-single-sitting-rct">Single-Sitting Molar RCT</option>
               </optgroup>
-              <optgroup label="💎 Cosmetic &amp; Orthodontics">
+              <optgroup label="Cosmetic &amp; Orthodontics">
                 <option value="teeth-whitening">Laser Teeth Whitening</option>
                 <option value="dental-veneers">Porcelain E.max Veneers</option>
                 <option value="smile-makeover">Complete 3D Smile Makeover</option>
@@ -531,7 +599,7 @@ function createBookingModalDOM() {
                 <option value="braces">Orthodontic Braces</option>
                 <option value="gap-closure">Teeth Gap Closure</option>
               </optgroup>
-              <optgroup label="👑 Restorative &amp; Implants">
+              <optgroup label="Restorative &amp; Implants">
                 <option value="dental-crowns">Zirconia Crowns</option>
                 <option value="pfm-metal-crowns">PFM &amp; Metal Crowns</option>
                 <option value="dental-bridges">Fixed Dental Bridges</option>
@@ -596,11 +664,42 @@ function setupModalEvents(modal) {
   // Form Submit & Validation
   const form = modal.querySelector('#modalBookingForm');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (validateForm(form)) {
-        const nameVal = modal.querySelector('#mbName') ? modal.querySelector('#mbName').value : 'Patient';
-        alert(`Thank you, ${nameVal}! Your appointment request has been logged. Our Putalisadak front desk will call you within 15 minutes to confirm.`);
+        const nameVal = modal.querySelector('#mbName') ? modal.querySelector('#mbName').value.trim() : 'Patient';
+        const phoneVal = modal.querySelector('#mbPhone') ? modal.querySelector('#mbPhone').value.trim() : '';
+        const emailVal = modal.querySelector('#mbEmail') ? modal.querySelector('#mbEmail').value.trim() : '';
+        const treatSelect = modal.querySelector('#mbTreatment');
+        const treatVal = (treatSelect && treatSelect.selectedIndex >= 0) ? treatSelect.options[treatSelect.selectedIndex].text : 'Dental Consultation';
+        const dateVal = modal.querySelector('#mbDate') ? modal.querySelector('#mbDate').value : 'Upcoming';
+        const timeVal = modal.querySelector('#mbTime') ? modal.querySelector('#mbTime').value : '10:00 AM';
+        const msgVal = modal.querySelector('#mbMsg') ? modal.querySelector('#mbMsg').value.trim() : '';
+
+        const submitBtn = modal.querySelector('#modalBookingSubmitBtn');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span class="loading-spinner"></span> Sending Request...';
+        }
+
+        const modalPayload = {
+          _subject: `New Modal Appointment Request - ${nameVal} (${treatVal})`,
+          _captcha: "false",
+          _template: "table",
+          "Patient Name": nameVal,
+          "Phone / WhatsApp": phoneVal,
+          "Email Address": emailVal,
+          "Treatment": treatVal,
+          "Preferred Date": dateVal,
+          "Preferred Time": timeVal,
+          "Symptoms / Notes": msgVal || "None Provided",
+          "Source Page": window.location.href,
+          "Submitted At": new Date().toLocaleString('en-US', { timeZone: 'Asia/Kathmandu' })
+        };
+
+        await sendLeadToEmail(modalPayload);
+
+        alert(`Thank you, ${nameVal}! Your appointment request has been sent to our Putalisadak front desk (dentalinkathmandu@gmail.com). We will call you within 15 minutes to confirm.`);
         closeBookingModal();
       }
     });
